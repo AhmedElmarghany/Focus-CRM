@@ -62,6 +62,35 @@
     font-size: 1.1rem;
 }
 
+/* Stats card */
+.stats-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.5);
+    padding: 1.4rem 2rem;
+    display: inline-flex;
+    gap: 2.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -.03em;
+    color: var(--foreground);
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: .78rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+    margin-top: .15rem;
+}
+
+
 /* Animation Logic: Right to Left */
 @keyframes scroll {
     0% {
@@ -88,4 +117,18 @@
         animation-duration: 20s;
         /* Faster on small screens to look natural */
     }
+
+    .hero-section {
+        padding: 3.5rem 0 3rem;
+    }
+
+    .stats-card {
+        gap: 1.5rem;
+        padding: 1.1rem 1.25rem;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+    }
+
 }
