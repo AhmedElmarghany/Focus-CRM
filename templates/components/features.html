@@ -1,0 +1,134 @@
+{% load static %}
+<section class="features py-5">
+  <div class="container">
+    <!-- Heading -->
+    <h2 class="features__title text-center">
+      Futuristic features.<br />About time.
+    </h2>
+
+    <!--
+      Bootstrap grid:
+      • xs  (< 576)  → 1 column  (col-12)
+      • sm  (≥ 576)  → 2 columns (col-sm-6)
+      • lg  (≥ 992)  → 3 columns (col-lg-4)
+      g-4 = 1.5 rem gap between cards
+    -->
+    <div class="row g-4">
+      <!-- 1 · Robust Security -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <div class="feature-card__header">
+            <div class="feature-card__icon">
+              <!-- security icon -->
+              <img
+                src="{% static 'icons/security.svg' %}"
+                alt="security icon"
+              />
+            </div>
+            <h3 class="feature-card__title">Robust Security</h3>
+          </div>
+          <p class="feature-card__body">
+            Protect your data with enterprise-grade security features, including
+            encryption.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 · Editable Dashboard -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <div class="feature-card__header">
+            <div class="feature-card__icon">
+              <!-- dashboard icon -->
+              <img
+                src="{% static 'icons/dashboard.svg' %}"
+                alt="dashboard icon"
+              />
+            </div>
+            <h3 class="feature-card__title">Editable Dashboard</h3>
+          </div>
+          <p class="feature-card__body">
+            Personalize your workspace with customizable dashboards that let you
+            organize.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 · Real-Time Analytics -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <div class="feature-card__header">
+            <div class="feature-card__icon">
+              <!-- time icon -->
+              <img src="{% static 'icons/time.svg' %}" alt="time icon" />
+            </div>
+            <h3 class="feature-card__title">Real-Time Analytics</h3>
+          </div>
+          <p class="feature-card__body">
+            Track and analyze data instantly with powerful, real-time analytics
+            to make informed.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 · Seamless Integrations -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <div class="feature-card__header">
+            <div class="feature-card__icon">
+              <!-- integration icon -->
+              <img
+                src="{% static 'icons/integrate.svg' %}"
+                alt="integration icon"
+              />
+            </div>
+            <h3 class="feature-card__title">Seamless Integrations</h3>
+          </div>
+          <p class="feature-card__body">
+            Easily connect with popular tools and platforms to streamline your
+            workflow and enhance.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 · User-Friendly Interface -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <div class="feature-card__header">
+            <div class="feature-card__icon">
+              <!-- screnn icon -->
+              <img src="{% static 'icons/screen.svg' %}" alt="screen icon" />
+            </div>
+            <h3 class="feature-card__title">User-Friendly Interface</h3>
+          </div>
+          <p class="feature-card__body">
+            A clean &amp; intuitive design that ensures a seamless user
+            experience, minimizing the learning.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 · 24/7 Customer Support -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="feature-card">
+          <div class="feature-card__header">
+            <div class="feature-card__icon">
+              <!-- headset icon -->
+              <img
+                src="{% static 'icons/headphone.svg' %}"
+                alt="headphone icon"
+              />
+            </div>
+            <h3 class="feature-card__title">24/7 Customer Support</h3>
+          </div>
+          <p class="feature-card__body">
+            Access to round-the-clock customer support to assist with any issues
+            or questions.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</section>
