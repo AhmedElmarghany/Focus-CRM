@@ -1,0 +1,59 @@
+{% load static %}
+<section class="hero">
+  <div class="container">
+    <!-- Badge -->
+    <div class="hero-badge-container">
+      <div class="d-flex justify-content-center justify-content-md-center mb-4">
+        <a href="#" class="hero-badge">
+          <span class="hero-badge__pill">New feature</span>
+          <span class="hero-badge__text">
+            We've just released a new feature
+            <span class="hero-badge__arrow">→</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="hero-title text-center mx-auto mb-4" style="max-width: 820px">
+      Unlock the Power of Relationships with Our SaaS CRM
+    </h1>
+
+    <!-- Subheading -->
+    <p class="hero-sub text-center mx-auto mb-5">
+      Unleash Efficiency, Boost Sales, and Delight Customers. Transform Your
+      Business with our Seamless Customer Relationship Management
+    </p>
+
+    <!-- CTA buttons -->
+    <div
+      class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-stretch align-items-sm-center mb-0"
+    >
+      <a href="#" class="btn btn-cta-primary">Sign up</a>
+      <a href="#" class="btn btn-cta-secondary">Talk to Sales</a>
+    </div>
+  </div>
+  <!-- /container -->
+
+  <!-- Dashboard screenshot -->
+  <div class="dashboard-wrap">
+    <div class="dashboard-frame" style="max-width: min(960px, 92%)">
+      <!--
+          Responsive image strategy:
+          • <source media="(max-width: 575px)"> → mobile screenshot
+          • fallback <img>                       → desktop screenshot
+        -->
+      <picture>
+        <source
+          srcset="https://images.klipfolio.com/website/public/bf9c6fbb-06bf-4f1d-88a7-d02b70902bd1/data-dashboard.png"
+          media="(max-width: 575px)"
+        />
+        <img
+          src="https://images.klipfolio.com/website/public/bf9c6fbb-06bf-4f1d-88a7-d02b70902bd1/data-dashboard.png"
+          alt="CRM dashboard preview"
+          loading="eager"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
