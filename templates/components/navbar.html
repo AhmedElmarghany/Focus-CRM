@@ -1,0 +1,29 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
+  <div class="container">
+    <a class="navbar-brand text d-flex justify-content-center gap-2 p-2">
+      <img src="{% static 'logo.svg' %}" alt="logo" width="22px" /> Focus</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor03"
+      aria-controls="navbarColor03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <!-- <p class="text-info lh-sm my-auto">|</p> -->
+      <ul class="navbar-nav justify-content-lg-center">
+        <li class="nav-item">
+          <a class="nav-link active">Home</a>
+        </li>
+      </ul>
+      <a class="btn btn-secondary my-sm-0 mx-sm-2">Signup</a>
+      <a class="btn btn-primary my-sm-0">Login</a>
+    </div>
+  </div>
+</nav>

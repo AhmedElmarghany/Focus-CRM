@@ -7,9 +7,13 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href={% static 'css/style.css' %}>
     <link rel="shortcut icon" href={% static 'favicon.ico' %} type="image/x-icon">
+    <link rel="stylesheet" href={% static 'css/main.css' %}>
 </head>
 <body>
+    {% include 'components/navbar.html' %}
     {% block content %}
     {% endblock content %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
