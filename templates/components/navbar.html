@@ -1,29 +1,49 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
-  <div class="container">
-    <a class="navbar-brand text d-flex justify-content-center gap-2 p-2">
-      <img src="{% static 'logo.svg' %}" alt="logo" width="22px" /> Focus</a
-    >
+<nav
+  class="navbar navbar-expand-lg bg-body-tertiary"
+  aria-label="Thirteenth navbar example"
+>
+  <div class="container-fluid">
+    <!-- Logo -->
+      <a class="navbar-brand col-lg-3 me-0" href="#">
+        <img src="{% static 'logo.svg' %}" alt="logo" width="22px" />
+        <strong class="color-primary">Focus</strong>
+      </a>
+      
+    <!-- Mobile toggle -->
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarColor03"
-      aria-controls="navbarColor03"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarColor03">
-      <!-- <p class="text-info lh-sm my-auto">|</p> -->
-      <ul class="navbar-nav justify-content-lg-center">
+    <div class="collapse navbar-collapse d-lg-flex" id="mainNav">
+      
+      <!-- Links -->
+      <ul class="navbar-nav col-lg-6 justify-content-lg-center">
         <li class="nav-item">
-          <a class="nav-link active">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
         </li>
       </ul>
-      <a class="btn btn-secondary my-sm-0 mx-sm-2">Signup</a>
-      <a class="btn btn-primary my-sm-0">Login</a>
+      <!-- Buttons -->
+      <div class="d-sm-flex d-lg-flex justify-content-sm-end justify-content-lg-end gap-2 ms-lg-auto">
+        <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login">Login</a>
+        <a class="btn btn-primary my-sm-0 w-100 w-lg-auto btn-nav-signup">Signup</a>
+      </div>
     </div>
   </div>
 </nav>

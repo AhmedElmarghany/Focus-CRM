@@ -13,13 +13,3 @@
     font-style: italic;
     font-display: swap;
 }
-body {
-    font-family: 'IBM Plex Sans', sans-serif !important;
-    color: #2a1e00 !important;
-}
-
-h1{
-    color: green;
-    background-color: gold;
-    text-align: center;
-}

@@ -1,0 +1,116 @@
+    .navbar {
+      background: var(--card) !important;
+      border-bottom: 1px solid var(--border);
+      padding-top: .85rem;
+      padding-bottom: .85rem;
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+    }
+
+    .navbar-brand {
+      font-size: 1.35rem;
+      color: var(--primary) !important;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+
+    .navbar-nav .nav-link {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      padding: .35rem .75rem !important;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .btn-nav-login {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--foreground);
+      border-radius: .6rem;
+      padding: .38rem 1rem;
+      background: transparent;
+      transition: border-color .18s, color .18s;
+    }
+
+    .btn-nav-login:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-nav-signup {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--primary-foreground);
+      border-radius: .6rem;
+      padding: .38rem 1rem;
+      background: var(--primary);
+    }
+
+    /* Custom hamburger */
+    .navbar-toggler {
+      border: 1.5px solid var(--border);
+      border-radius: .6rem;
+      padding: .38rem .55rem;
+      background: transparent;
+      transition: background .18s, border-color .18s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 3px var(--ring);
+    }
+
+    .navbar-toggler:hover {
+      border-color: var(--primary);
+    }
+
+    .navbar-toggler-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 20px;
+    }
+
+    /* Collapse menu mobile */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        border-top: 1px solid var(--border);
+        margin-top: .75rem;
+        padding-top: .75rem;
+      }
+
+      .navbar-nav .nav-link {
+        padding: .5rem .5rem !important;
+      }
+
+      .navbar-nav.ms-auto {
+        margin-top: .5rem;
+        flex-direction: row;
+        gap: .5rem;
+      }
+    }
