@@ -184,10 +184,14 @@
             linear-gradient(to bottom, var(--border) 1px, transparent 1px);
 
         /* Fades the grid out toward the edges */
-        -webkit-mask-image: radial-gradient(circle, black 70%, transparent 80%);
-        mask-image: radial-gradient(circle, black 70%, transparent 80%);
+        -webkit-mask-image: radial-gradient(closest-side, black 70%, transparent 80%);
+        mask-image: radial-gradient(closest-side, black 70%, transparent 80%);
 
 
+    }
+
+    .hero-badge__text {
+        font-size: .75rem;
     }
 
     .hero-title {
