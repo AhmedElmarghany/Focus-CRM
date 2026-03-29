@@ -1,0 +1,85 @@
+{% load static %}
+<footer class="site-footer">
+  <div class="container">
+    <!--
+      Bootstrap grid:
+      • xs  → all cols stack (col-6 for nav cols so they pair on mobile)
+      • md  → logo full row, nav cols in a row
+      • lg  → logo col-lg-3, three nav cols col-lg-2, social col-lg-3
+    -->
+    <div class="row gx-4 gy-5">
+      <!-- Brand -->
+      <div class="col-12 col-lg-3 footer-logo-col">
+        <a href="#" class="footer-logo">
+            <!-- Lgoo -->
+                <img src="{% static 'logo.svg' %}" alt="logo" width="22px" />
+          <span class="footer-logo__name">Focus CRM</span>
+        </a>
+        <p class="footer-tagline">
+          Online CRM solutions for modern businesses—built for speed,
+          security, and scale.
+        </p>
+      </div>
+
+      <!-- Solutions -->
+      <div class="col-6 col-md-3 col-lg-2">
+        <p class="footer-col-title">Solutions</p>
+        <ul class="footer-links">
+          <li><a href="#">Small Business</a></li>
+          <li><a href="#">Freelancers</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Taxes</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="col-6 col-md-3 col-lg-2">
+        <p class="footer-col-title">Company</p>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Career</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Learn -->
+      <div class="col-6 col-md-3 col-lg-2">
+        <p class="footer-col-title">Learn</p>
+        <ul class="footer-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Ebooks</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Templates</a></li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div class="col-6 col-md-3 col-lg-3 ms-lg-auto">
+        <p class="footer-social-label">Follow us on</p>
+        <div class="social-icons">
+          <!-- Twitter / X -->
+          <a href="#" class="social-icon" aria-label="Twitter">
+                <img src="{% static 'images/logos/x.svg' %}" alt="logo" width="22px" />
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+                <img src="{% static 'images/logos/linkedin.svg' %}" alt="logo" width="22px" />
+          </a>
+
+          <!-- Facebook -->
+          <a href="#" class="social-icon" aria-label="Facebook">
+                <img src="{% static 'images/logos/facebook.svg' %}" alt="logo" width="22px" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- /row -->
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>©Focus CRM 2026. All Rights Reserved.</p>
+    </div>
+  </div>
+  <!-- /container -->
+</footer>
