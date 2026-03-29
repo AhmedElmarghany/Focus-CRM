@@ -2,7 +2,9 @@
     padding: 64px 0 64px;
     background: var(--background);
     border-top: 1px solid var(--border);
+    scroll-margin-top: 65px;
 }
+
 
 /* Left column */
 .faq__label-wrap {
@@ -94,7 +96,7 @@
 /* RESPONSIVE OVERRIDES */
 @media (max-width: 575.98px) {
     /* .faq { */
-        /* padding: 64px 0 72px; */
+    /* padding: 64px 0 72px; */
     /* } */
 
     .faq__heading {
@@ -104,13 +106,15 @@
 
 
 @media (max-width: 992px) {
+
     .faq__heading,
     .faq__label-wrap,
     .faq__contact {
         text-align: center;
     }
-    .faq{
-    padding: 48px 0 48px;
+
+    .faq {
+        padding: 48px 0 48px;
     }
 
 }
