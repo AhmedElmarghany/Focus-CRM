@@ -225,6 +225,15 @@
     .logo-item__name {
         font-size: .9rem;
     }
+    .dashboard-frame {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    box-shadow:
+        0 0 0 0px rgba(0, 0, 0, .06),
+        0 0px 0px rgba(0, 0, 0, .14);
+    background: transparent;
+    }
 }
 
 /* Tablet (576 – 991 px): still centred, moderate scale */
@@ -236,6 +245,7 @@
     .dashboard-frame {
         border-radius: 16px 16px 0 0;
     }
+    
 }
 
 /* Large desktop (≥ 1200 px) */
