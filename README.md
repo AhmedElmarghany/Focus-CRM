@@ -1,6 +1,6 @@
 # Focus CRM
 
-Customer Relationship Management (CRM) system built with Django and Bootstrap.
+Customer Relationship Management (CRM) Landing page built with Django and Bootstrap.
 
 ## [Visit Live Demo](https://ahmedelmarghany.pythonanywhere.com/)
 ## 📋 Prerequisites
@@ -35,7 +35,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5. Configure Django
+### 4. Configure Django (optional)
 
 The project uses Django's default SQLite database. To initialize the database:
 
@@ -43,12 +43,12 @@ The project uses Django's default SQLite database. To initialize the database:
 python manage.py migrate
 ```
 
-### 7. Run Development Server
+### 5. Run Development Server
 ```bash
 python manage.py runserver
 ```
 
-The application will be available at `http://localhost:8000`
+The application will be available at `http://127.0.0.1:8000/`
 
 ## 📁 Project Structure
 
@@ -56,7 +56,7 @@ The application will be available at `http://localhost:8000`
 Focus-CRM/
 ├── project/   
 │   ├── ...
-│   └── static/                # Static files (CSS, JavaScript, images)
+│   └── static/                # Static files (CSS, JavaScript, images, bootstrap)
 ├── webapp/
 │   ├── models.py
 │   ├── views.py
@@ -92,16 +92,15 @@ The project uses **IBM Plex Sans** Font definitions are in [static/css/style.css
 
 ### Styling
 - Main stylesheet: [static/css/style.css](project/static/css/style.css)
-- Compiled from SASS using `sass` package
+- Bootstrap Files [static/css/main.css](project/static/css/main.css) , [static/js/bootstrap.bundle.min.js](project/static/js/bootstrap.bundle.min.js)
+- Compiled from SASS using `sass` package to override Bootstrap original styles.
 - Bootstrap and custom CSS combined for responsive design
 
 ### Icons
 SVG icons are used throughout the application.
 
 ### JavaScript Implementation
-The JavaScript code that handles scroll detection is located in [templates/components/navbar.html](templates/components/navbar.html).
-
-
+The JavaScript code that handles scroll detection is located in [project/static/js/scrollTracker.js](project/static/js/scrollTracker.js).
 
 ## For production deployment:
 1. Change `DEBUG = False` in `project/settings.py`
