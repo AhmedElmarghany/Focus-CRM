@@ -15,15 +15,16 @@
     <link rel="stylesheet" href={% static 'css/pricing.css' %}>
     <link rel="stylesheet" href={% static 'css/faq.css' %}>
     <link rel="stylesheet" href={% static 'css/footer.css' %}>
+    <link rel="stylesheet" href={% static 'css/form.css' %}>
 </head>
-<body class="container">
-    {% include 'components/navbar.html' %}
+<body>
 
     {% block content %}
     {% endblock content %}
 
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/scrollTracker.js' %}"></script>
+    <script src="{% static 'js/form.js' %}"></script>
 </body>
 </html>
 

@@ -1,0 +1,120 @@
+.faq {
+    padding: 64px 0 64px;
+    background: var(--background);
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 65px;
+}
+
+
+/* Left column */
+.faq__label-wrap {
+    color: var(--muted-foreground);
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.faq__heading {
+    padding-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: var(--primary);
+    font-weight: 700;
+
+}
+
+.faq__contact {
+    font-size: .92rem;
+    color: var(--muted-foreground);
+}
+
+.faq__contact a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.faq__contact a:hover {
+    text-decoration: underline;
+}
+
+/* Accordion overrides – native Bootstrap accordion */
+.faq-accordion .accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0 !important;
+}
+
+.faq-accordion .accordion-item:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.faq-accordion .accordion-button {
+    background: transparent;
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 22px 4px;
+    box-shadow: none;
+    gap: 12px;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    color: var(--foreground);
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Custom +/− icon */
+.faq-accordion .accordion-button::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1;
+    background-image: none;
+    width: auto;
+    height: auto;
+    color: var(--muted-foreground);
+    transform: none !important;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.faq-accordion .accordion-button:not(.collapsed)::after {
+    content: '−';
+}
+
+.faq-accordion .accordion-body {
+    padding: 0 4px 22px;
+    font-size: .92rem;
+    color: var(--muted-foreground);
+    line-height: 1.7;
+}
+
+/* RESPONSIVE OVERRIDES */
+@media (max-width: 575.98px) {
+    /* .faq { */
+    /* padding: 64px 0 72px; */
+    /* } */
+
+    .faq__heading {
+        font-size: 2rem;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .faq__heading,
+    .faq__label-wrap,
+    .faq__contact {
+        text-align: center;
+    }
+
+    .faq {
+        padding: 48px 0 48px;
+    }
+
+}

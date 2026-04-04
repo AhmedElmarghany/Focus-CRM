@@ -5,7 +5,7 @@
 >
   <div class="container-fluid">
     <!-- Logo -->
-      <a class="navbar-brand col-lg-3 me-0" href="#">
+      <a class="navbar-brand col-lg-3 me-0" href="{% url 'index' %}">
         <img src="{% static 'logo.svg' %}" alt="logo" width="22px" />
         <strong class="color-primary">Focus</strong>
       </a>
@@ -42,7 +42,7 @@
       <!-- Buttons -->
       <div class="d-sm-flex d-lg-flex justify-content-sm-end justify-content-lg-end gap-2 ms-lg-auto">
         <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login">Login</a>
-        <a class="btn btn-primary my-sm-0 w-100 w-lg-auto btn-nav-signup">Signup</a>
+        <a class="btn btn-primary my-sm-0 w-100 w-lg-auto btn-nav-signup" href="{% url 'signup' %}">Signup</a>
       </div>
     </div>
   </div>

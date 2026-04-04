@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div>
+    <div class="row g-0" style="min-height: 100vh">
+      <!-- ── Left Panel ── -->
+      <div class="col-md-5 col-lg-5 panel-left">
+        <!-- circular web shape -->
+        <svg
+          class="geo-lines"
+          width="480"
+          height="480"
+          viewBox="0 0 480 480"
+          fill="none"
+        >
+          <circle cx="240" cy="240" r="190" stroke="white" stroke-width="1" />
+          <circle cx="240" cy="240" r="130" stroke="white" stroke-width="1" />
+          <circle cx="240" cy="240" r="70" stroke="white" stroke-width="1" />
+          <line
+            x1="50"
+            y1="240"
+            x2="430"
+            y2="240"
+            stroke="white"
+            stroke-width="1"
+          />
+          <line
+            x1="240"
+            y1="50"
+            x2="240"
+            y2="430"
+            stroke="white"
+            stroke-width="1"
+          />
+          <line
+            x1="90"
+            y1="90"
+            x2="390"
+            y2="390"
+            stroke="white"
+            stroke-width="1"
+          />
+          <line
+            x1="390"
+            y1="90"
+            x2="90"
+            y2="390"
+            stroke="white"
+            stroke-width="1"
+          />
+        </svg>
+
+        <!-- logo -->
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'logo-white.svg' %}" alt="logo" width="22px" />
+          <strong class="brand-name">Focus</strong>
+        </a>
+
+        <!-- slogan -->
+        <div class="tagline-block">
+          <h2>
+            Shape your<br /><em>customer journey</em><br />with simplicity.
+          </h2>
+          <p>
+            A calm, intelligent workspace for people who take their money
+            seriously.
+          </p>
+
+          <div class="social-proof">
+            <div class="avatars">
+              <div class="avatar">JL</div>
+              <div class="avatar">MR</div>
+              <div class="avatar">TK</div>
+              <div class="avatar">SA</div>
+            </div>
+            <div class="proof-text">
+              <strong>250+</strong> members<br />joined this month
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Right Panel ── -->
+      <div class="col-md-7 col-lg-7 panel-right">
+        <div class="form-card">
+          <h1 class="fade-up serif">Create account</h1>
+          <div class="fields-divider"></div>
+
+          <form method="POST">
+            {% csrf_token %}
+            <!-- Name row -->
+            <div class="field-row fade-up delay-1">
+              <div class="field-group">
+                <label for="id_first_name">First name</label>
+                <!-- <input type="text" id="fname" placeholder="Jane" autocomplete="given-name" /> -->
+                {{ signup_form.first_name }} {{ signup_form.first_name.errors }}
+              </div>
+              <div class="field-group">
+                <label for="id_last_name">Last name</label>
+                {{ signup_form.last_name }} {{ signup_form.last_name.errors }}
+              </div>
+            </div>
+
+            <!-- username -->
+            <div class="field-group fade-up delay-2">
+              <label for="username">username</label>
+              {{ signup_form.username }} {{ signup_form.username.errors }}
+            </div>
+
+            <div class="fields-divider fade-up delay-2"></div>
+
+            <!-- Password -->
+            <div class="field-group fade-up delay-3">
+              <label for="id_password1">Password</label>
+              <div class="password-wrapper">
+                {{ signup_form.password1 }} {{ signup_form.password1.errors }}
+                <button
+                  type="button"
+                  class="toggle-pw"
+                  onclick="togglePw('password', 'eye1')"
+                  aria-label="Toggle password visibility"
+                >
+                  <svg
+                    id="eye1"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+              <div class="strength-bar">
+                <div class="strength-seg" id="s1"></div>
+                <div class="strength-seg" id="s2"></div>
+                <div class="strength-seg" id="s3"></div>
+                <div class="strength-seg" id="s4"></div>
+              </div>
+              <div class="strength-label" id="strength-label"></div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="field-group fade-up delay-4">
+              <label for="id_password2">Confirm password</label>
+              <div class="password-wrapper">
+                {{ signup_form.password2 }} {{ signup_form.password2.errors }}
+
+                <button
+                  type="button"
+                  class="toggle-pw"
+                  onclick="togglePw('confirm-password', 'eye2')"
+                  aria-label="Toggle password visibility"
+                >
+                  <svg
+                    id="eye2"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+              <div class="match-indicator" id="match-indicator">
+                <div class="match-dot" id="match-dot"></div>
+                <span
+                  id="match-text"
+                  style="font-family: &quot;IBM Plex Sans&quot;, sans-serif"
+                ></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary-custom fade-up delay-5">
+              Create my account
+            </button>
+          </form>
+          <p class="subtitle fade-up delay-6">
+            Already have one? <a href="#">Sign in</a>
+          </p>
+
+          <p class="footnote fade-up delay-7">
+            Protected by encryption &nbsp;·&nbsp; No credit card required
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
