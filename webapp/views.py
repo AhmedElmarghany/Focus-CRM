@@ -40,6 +40,6 @@ def login(request):
     else:
         form = LoginForm()
 
-    context = {'login_form': form}
+    context = {'login_form': form, 'title': 'Focus | Login'}
 
     return render(request, 'pages/login.html', context)
