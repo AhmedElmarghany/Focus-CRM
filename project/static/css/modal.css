@@ -1,0 +1,98 @@
+#logoutModal .modal-content {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.6);
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(42, 30, 0, 0.13), 0 1px 4px rgba(42, 30, 0, 0.06);
+}
+
+.modal-centering {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#logoutModal .modal-header {
+    border-bottom: none;
+    padding: 1.4rem 1.5rem 0.5rem;
+    align-items: flex-start;
+}
+
+#logoutModal .modal-icon {
+    width: 42px;
+    height: 42px;
+    background: #fde8e8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.85rem;
+}
+
+#logoutModal .modal-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+}
+
+#logoutModal .modal-body {
+    padding: 0 1.5rem 1.4rem;
+}
+
+#logoutModal .modal-body p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    line-height: 1.65;
+    margin: 0;
+}
+
+#logoutModal .modal-footer {
+    background: var(--muted);
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.5rem 1.35rem;
+    gap: 10px;
+}
+
+#logoutModal .btn-cancel {
+    flex: 1;
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.58rem 1rem;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+#logoutModal .btn-cancel:hover {
+    background: #e2dccb;
+    border-color: #c5bca4;
+}
+
+#logoutModal .btn-logout {
+    flex: 1;
+    background: var(--destructive);
+    color: var(--destructive-foreground);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.58rem 1rem;
+    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+#logoutModal .btn-logout:hover {
+    background: #c8000a;
+    box-shadow: 0 3px 12px rgba(231, 0, 11, 0.25);
+}
+
+#logoutModal .btn-close {
+    color: var(--muted-foreground);
+    opacity: 1;
+    transition: color 0.15s;
+}
+
+#logoutModal .btn-close:hover {
+    color: var(--foreground);
+}

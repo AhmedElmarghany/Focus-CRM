@@ -42,7 +42,17 @@
       <!-- Buttons -->
       <div class="d-sm-flex d-lg-flex justify-content-sm-end justify-content-lg-end gap-2 ms-lg-auto">
       {% if user.is_authenticated %}
-        <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login" href="{% url 'logout' %}">Logout</a>
+      <div class="md-auto my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login">
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, {{ user.first_name|capfirst }}</a>
+          <div class="dropdown-menu dropdown-menu-left">
+            <!-- <a class="dropdown-item" href="{% url 'logout' %}">Logout</a> -->
+            <a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+          </div>
+        </div>
+      </div>
+
+        <!-- <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login" href="{% url 'logout' %}">Logout</a> -->
       {% else %}
         <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login" href="{% url 'login' %}">Login</a>
         <a class="btn btn-primary my-sm-0 w-100 w-lg-auto btn-nav-signup" href="{% url 'signup' %}">Signup</a>

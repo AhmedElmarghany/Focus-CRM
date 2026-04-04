@@ -16,11 +16,13 @@
     <link rel="stylesheet" href={% static 'css/faq.css' %}>
     <link rel="stylesheet" href={% static 'css/footer.css' %}>
     <link rel="stylesheet" href={% static 'css/form.css' %}>
+    <link rel="stylesheet" href={% static 'css/modal.css' %}>
 </head>
 <body>
 
     {% block content %}
     {% endblock content %}
+    {% include 'components/logout-modal.html' %}
 
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/scrollTracker.js' %}"></script>
