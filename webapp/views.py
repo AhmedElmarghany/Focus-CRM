@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm, LoginForm
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
 
 
@@ -35,7 +35,7 @@ def login(request):
             if user is not None:
                 auth_login(request, user)
                 messages.add_message(request, messages.SUCCESS, "Successfull login")
-                return redirect('dashboard')
+                return redirect('index')
 
     else:
         form = LoginForm()
@@ -43,3 +43,9 @@ def login(request):
     context = {'login_form': form, 'title': 'Focus | Login'}
 
     return render(request, 'pages/login.html', context)
+
+
+
+def logout(request):
+    auth_logout(request)
+    return redirect('login')
