@@ -1,6 +1,7 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.forms.widgets import PasswordInput, TextInput
 
 # Register form
 class CreateUserForm(UserCreationForm):
@@ -37,6 +38,29 @@ class CreateUserForm(UserCreationForm):
             'oninput': 'checkMatch()'
         })
 
+        
+        for field in self.fields.values():
+            field.help_text = None
+
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(widget=TextInput)
+    password =forms.CharField(widget=PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['username'].widget.attrs.update({
+            'placeholder': 'janeDoe123'
+        })
+        self.fields['password'].widget.attrs.update({
+            'placeholder': '••••••',
+            'autocomplete': 'new-password',
+            'id': 'password',
+        })
         
         for field in self.fields.values():
             field.help_text = None
