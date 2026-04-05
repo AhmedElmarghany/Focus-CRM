@@ -96,6 +96,120 @@
       width: 20px;
     }
 
+    /* Dropdown trigger */
+    .dd-trigger {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 9px 4px 4px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dd-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted-foreground);
+      letter-spacing: .04em;
+    }
+
+    .dd-name {
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--secondary-foreground);
+    }
+
+    .dd-chevron {
+      color: var(--card-foreground);
+    }
+
+    /* Dropdown panel */
+    .dd-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius)*1.4);
+      box-shadow: 0 8px 30px rgba(42, 30, 0, .11);
+      padding: .4rem;
+      min-width: 200px;
+      z-index: 99;
+      display: none;
+    }
+
+    .dd-trigger.open .dd-menu {
+      display: block;
+    }
+
+    .dd-header {
+      padding: .6rem .7rem .5rem;
+      /* border-bottom: 1px solid var(--border); */
+      margin-bottom: .3rem;
+    }
+
+    .dd-header .dname {
+      font-size: .83rem;
+      font-weight: 500;
+      color: var(--foreground);
+    }
+
+    .dd-header .demail {
+      font-size: .7rem;
+      color: var(--muted-foreground);
+      margin-top: 1px;
+    }
+
+    .dd-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: .83rem;
+      font-weight: 400;
+      color: var(--foreground);
+      padding: .46rem .7rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background .12s;
+    }
+
+    .dd-item:hover {
+      background: var(--secondary);
+    }
+
+    .dd-item svg {
+      color: var(--muted-foreground);
+      flex-shrink: 0;
+    }
+
+    .dd-item.logout {
+      color: var(--destructive);
+      margin-top: .2rem;
+      border-top: 1px solid var(--border);
+      border-radius: 0 0 var(--radius) var(--radius);
+      text-decoration: none;
+    }
+
+    .dd-item.logout:hover {
+      background: #fde8e8;
+    }
+
+    .dd-item.logout svg {
+      color: var(--destructive);
+    }
+
+
+
     /* Collapse menu mobile */
     @media (max-width: 991.98px) {
       .navbar-collapse {
