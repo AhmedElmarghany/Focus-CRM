@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm, LoginForm
+from .forms import CreateUserForm, LoginForm, CreateRecordForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 
 
 def index(request):
@@ -49,3 +51,22 @@ def login(request):
 def logout(request):
     auth_logout(request)
     return redirect('login')
+
+
+@login_required(login_url='login')
+def create_record(request):
+    form = CreateRecordForm()
+    print(form)
+    if request.method == 'POST':
+        form = CreateRecordForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, "Customer Added Successfully")
+            messages.add_message(request, messages.SUCCESS, "Customer Added Successfully")
+            return redirect('index')
+    else:
+        form = CreateRecordForm()
+    
+    context = {'createRecordForm': form, 'title': 'Focus | New Customer'}
+
+    return render(request, 'pages/create-record.html', context)

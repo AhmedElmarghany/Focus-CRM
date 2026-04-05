@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+<body class="container">
+
+    {% include 'components/navbar.html' %}
+    <br>
+       <div class="cr-card">        
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Personal info -->
+            <div class="cr-section">
+              <h1 class="serif">Add New Customer</h1>
+            <div class="cr-section-label">Personal information</div>
+            <div class="cr-row">
+              <div class="cr-field">
+                <label for="id_first_name">First name</label>
+                {{ createRecordForm.first_name }}
+                {{ createRecordForm.first_name.errors }}
+              </div>
+              <div class="cr-field">
+                <label for="id_last_name">Last name</label>
+                {{ createRecordForm.last_name }}
+                {{ createRecordForm.last_name.errors }}
+              </div>
+            </div>
+          </div>
+     
+          <!-- Membership -->
+          <div class="cr-section">
+            <div class="cr-section-label">Membership</div>
+            <div class="cr-field">
+              <label for="id_category">Category</label>
+              {{ createRecordForm.category }}
+              {{ createRecordForm.category.errors }}
+            </div>
+          </div>
+     
+          <!-- Contact -->
+          <div class="cr-section">
+            <div class="cr-section-label">Contact</div>
+            <div class="cr-row">
+              <div class="cr-field">
+                <label for="id_phone">Phone number</label>
+                {{ createRecordForm.phone }}
+                {{ createRecordForm.phone.errors }}
+              </div>
+              <div class="cr-field">
+                <label for="id_address">Address</label>
+                {{ createRecordForm.address }}
+                {{ createRecordForm.address.errors }}
+              </div>
+            </div>
+          </div>
+     
+          <!-- Physical stats -->
+          <div class="cr-section">
+            <div class="cr-section-label">Physical stats</div>
+            <div class="cr-row">
+              <div class="cr-field">
+                <label for="id_tall">Height</label>
+                <div class="cr-input-wrap">
+                  {{ createRecordForm.tall }}
+                  {{ createRecordForm.tall.errors }}
+                  <span class="cr-unit">cm</span>
+                </div>
+              </div>
+              <div class="cr-field">
+                <label for="id_weight">Weight</label>
+                <div class="cr-input-wrap">
+                  {{ createRecordForm.weight }}
+                  {{ createRecordForm.weight.errors }}
+                  <span class="cr-unit">kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+     
+          <!-- Footer actions -->
+          <div class="cr-footer">
+            <a href="javascript:history.back()" class="cr-btn-cancel">Cancel</a>
+            <button type="submit" class="cr-btn-submit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              Add Customer
+            </button>
+          </div>
+     
+        </form>
+      </div>
+</boby>
+  <br>
+{% endblock content %}
