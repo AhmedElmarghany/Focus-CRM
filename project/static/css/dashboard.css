@@ -1,0 +1,350 @@
+.db-page {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    color: var(--foreground);
+}
+
+.db-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 1.25rem 0;
+}
+
+.db-search-wrap {
+    width: 400px;
+}
+
+.db-search-input {
+    width: 100%;
+}
+
+.db-add-btn,
+.db-search-btn {
+    width: auto;
+}
+.db-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.58rem 1.2rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.db-add-btn:hover {
+    background: #162f50;
+    color: var(--primary-foreground);
+    box-shadow: 0 4px 16px rgba(12, 37, 63, 0.22);
+}
+
+/* ── Search ── */
+.db-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.db-search-wrap {
+    flex: 1;
+    min-width: 220px;
+    position: relative;
+}
+
+.db-search-wrap svg {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted-foreground);
+    pointer-events: none;
+}
+
+.db-search-input {
+    width: 100%;
+    padding: 0.58rem 0.875rem 0.58rem 2.35rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--foreground);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.db-search-input::placeholder {
+    color: var(--muted-foreground);
+    opacity: 0.7;
+}
+
+.db-search-input:focus {
+    border-color: var(--accent-foreground);
+    box-shadow: 0 0 0 3px var(--ring);
+    background: #fff;
+}
+
+.db-search-btn {
+    padding: 0.58rem 1.1rem;
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.db-search-btn:hover {
+    background: #e2dccb;
+    border-color: #c5bca4;
+}
+
+/* ── Table card ── */
+.db-table-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.8);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(42, 30, 0, 0.06), 0 1px 3px rgba(42, 30, 0, 0.04);
+}
+
+.db-table-scroll {
+    overflow-x: auto;
+}
+
+table.db-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.855rem;
+}
+
+table.db-table thead tr {
+    background: var(--muted);
+    border-bottom: 1px solid var(--border);
+}
+
+table.db-table thead th {
+    padding: 0.75rem 1rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    white-space: nowrap;
+    text-align: left;
+}
+
+table.db-table thead th:first-child {
+    padding-left: 1.25rem;
+}
+
+table.db-table thead th:last-child {
+    padding-right: 1.25rem;
+    text-align: center;
+}
+
+table.db-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.12s;
+}
+
+table.db-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+table.db-table tbody tr:hover {
+    background: var(--muted);
+}
+
+table.db-table tbody td {
+    padding: 0.85rem 1rem;
+    color: var(--muted-foreground);
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+table.db-table tbody td:first-child {
+    padding-left: 1.25rem;
+}
+
+table.db-table tbody td:last-child {
+    padding-right: 1.25rem;
+    text-align: center;
+}
+
+/* ID badge */
+.id-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary);
+    color: var(--muted-foreground);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+    min-width: 36px;
+}
+
+/* Avatar name cell */
+.name-text {
+    color: var(--foreground);
+    font-weight: 500;
+}
+
+/* Category pill */
+.cat-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    border: 1px solid rgba(65, 103, 145, 0.18);
+}
+
+/* Muted data cells */
+.td-muted {
+    color: var(--muted-foreground);
+}
+
+/* Date cell */
+.date-cell {
+    color: var(--muted-foreground);
+    font-size: 0.8rem;
+}
+
+/* View button */
+.btn-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.32rem 0.75rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.775rem;
+    font-weight: 500;
+    color: var(--accent-foreground);
+    text-decoration: none;
+    transition: background 0.12s, border-color 0.12s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.btn-view:hover {
+    background: var(--accent);
+    border-color: rgba(65, 103, 145, 0.25);
+    color: var(--accent-foreground);
+}
+
+/* Empty state */
+.db-empty {
+    padding: 3.5rem 1rem;
+    text-align: center;
+}
+
+.db-empty-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--muted-foreground);
+}
+
+.db-empty h6 {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--foreground);
+    margin-bottom: 0.35rem;
+}
+
+.db-empty p {
+    font-size: 0.825rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1.25rem;
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 767.98px) {
+    .db-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .db-add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .db-empty .db-add-btn {
+        width: auto;
+        justify-content: center;
+    }
+
+    .db-controls {
+                width: 100%;
+        flex-direction: row;
+
+        align-items: stretch;
+    }
+
+    .db-records-count {
+        margin-left: 0;
+    }
+
+    .db-search-wrap {
+        flex: 1;
+        width: auto;
+    }
+
+    .db-search-btn {
+        justify-content: center;
+        width: auto;
+    }
+
+}
+
+@media (max-width: 420px) {
+    .db-controls {
+        flex-direction: column;
+    }
+
+    .db-search-wrap{
+        width: 100%;
+    }
+
+    .db-search-btn {
+        width: 100%;
+    }
+}
