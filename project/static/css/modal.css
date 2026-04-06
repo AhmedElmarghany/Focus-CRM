@@ -1,3 +1,4 @@
+#deleteModal .modal-content,
 #logoutModal .modal-content {
     background: var(--card);
     border: 1px solid var(--border);
@@ -11,12 +12,14 @@
     margin-left: auto;
 }
 
+#deleteModal .modal-header,
 #logoutModal .modal-header {
     border-bottom: none;
     padding: 1.4rem 1.5rem 0.5rem;
     align-items: flex-start;
 }
 
+#deleteModal .modal-icon,
 #logoutModal .modal-icon {
     width: 42px;
     height: 42px;
@@ -28,6 +31,7 @@
     margin-bottom: 0.85rem;
 }
 
+#deleteModal .modal-title,
 #logoutModal .modal-title {
     font-size: 1.1rem;
     font-weight: 400;
@@ -35,10 +39,12 @@
     letter-spacing: -0.01em;
 }
 
+#deleteModal .modal-body,
 #logoutModal .modal-body {
     padding: 0 1.5rem 1.4rem;
 }
 
+#deleteModal .modal-body p,
 #logoutModal .modal-body p {
     font-size: 0.875rem;
     color: var(--muted-foreground);
@@ -46,6 +52,7 @@
     margin: 0;
 }
 
+#deleteModal .modal-footer,
 #logoutModal .modal-footer {
     background: var(--muted);
     border-top: 1px solid var(--border);
@@ -53,6 +60,7 @@
     gap: 10px;
 }
 
+#deleteModal .btn-cancel,
 #logoutModal .btn-cancel {
     flex: 1;
     background: var(--secondary);
@@ -65,11 +73,13 @@
     transition: background 0.15s, border-color 0.15s;
 }
 
+#deleteModal .btn-cancel:hover,
 #logoutModal .btn-cancel:hover {
     background: #e2dccb;
     border-color: #c5bca4;
 }
 
+#deleteModal .btn-delete,
 #logoutModal .btn-logout {
     flex: 1;
     background: var(--destructive);
@@ -82,17 +92,20 @@
     transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
 }
 
+#deleteModal .btn-delete:hover,
 #logoutModal .btn-logout:hover {
     background: #c8000a;
     box-shadow: 0 3px 12px rgba(231, 0, 11, 0.25);
 }
 
+#deleteModal .btn-close,
 #logoutModal .btn-close {
     color: var(--muted-foreground);
     opacity: 1;
     transition: color 0.15s;
 }
 
+#deleteModal .btn-close:hover,
 #logoutModal .btn-close:hover {
     color: var(--foreground);
 }

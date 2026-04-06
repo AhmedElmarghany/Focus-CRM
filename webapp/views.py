@@ -55,6 +55,15 @@ def logout(request):
 
 
 @login_required(login_url='login')
+def delete_account(request):
+    user = request.user
+    user.delete()
+    auth_logout(request)
+    messages.success(request, "Account deleted successfully")
+    return redirect('signup')
+
+
+@login_required(login_url='login')
 def create_record(request):
     form = CreateRecordForm()
     print(form)

@@ -1,0 +1,35 @@
+{% load static %}
+
+<!-- Modal -->
+<div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-centering" style="max-width: 390px;">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div>
+          <div class="modal-icon">
+            <!-- delete icon -->
+            <img
+              src="{% static 'icons/delete-red.svg' %}"
+              alt="delete icon"
+              width="18"
+              height="18"
+            />
+          </div>
+          <h5 class="modal-title" id="deleteModalLabel">Delete of your account?</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>Are you sure you need to delete this account?</p>
+      </div>
+
+      <div class="modal-footer d-flex">
+        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+        <a href="{% url 'deleteAccount' %}" class="btn btn-delete text-center">Yes, Delete it</a>
+      </div>
+
+    </div>
+  </div>
+</div>

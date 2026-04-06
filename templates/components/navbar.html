@@ -53,6 +53,21 @@
             <div class="dname">{{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</div>
             <div class="demail">{{ user.first_name }}@example.com</div>
           </div>
+          <a
+              class="dd-item delete"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteModal"
+            >
+              <img
+                src="{% static 'icons/delete.svg' %}"
+                alt="delete icon"
+                width="13"
+                height="13"
+              />
+              Delete account
+            </a>
+
           <a class="dd-item logout" type="button" data-bs-toggle="modal" data-bs-target="#logoutModal">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             Sign out
