@@ -95,3 +95,12 @@ def view_record(request, record_id):
     context = {'record': record, 'title': f'Focus | {record.first_name.capitalize() + " " + record.last_name.capitalize()}'}
 
     return render(request, 'pages/view_record.html', context)
+
+
+@login_required(login_url='login')
+def delete_record(request, record_id):
+    if request.method == "POST":
+        record = get_object_or_404(Record, id=record_id)
+        record.delete()
+        messages.add_message(request, messages.SUCCESS, "Customer Deleted Successfully")
+    return redirect('dashboard')

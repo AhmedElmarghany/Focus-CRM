@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <body class="container">
   {% include 'components/navbar.html' %}
 
@@ -157,6 +155,8 @@
             type="button"
             class="rv-btn-delete"
             data-bs-toggle="modal"
+            data-url="{% url 'delete_record' record.id %}"
+            onclick="deleteCustomer(this)"
             data-bs-target="#deleteCustomerModal"
           >
             <!-- delete icon -->
@@ -222,6 +222,12 @@
       document.getElementById("bmi-fill").style.width = pct + "%";
     }, 300);
   })();
+  function deleteCustomer(button) {
+    const recordId = button.getAttribute("data-url");
+    const url = button.getAttribute("data-url");
+
+    document.getElementById("deleteForm").action = url;
+  }
 </script>
 
 {% endblock content %}

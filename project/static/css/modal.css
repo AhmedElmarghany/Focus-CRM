@@ -58,7 +58,7 @@
     margin: 0;
 }
 
-#deleteCustomerModal .modal-body p strong{
+#deleteCustomerModal .modal-body p strong {
     color: var(--foreground);
 }
 
@@ -125,4 +125,15 @@
 #deleteAccountModal .btn-close:hover,
 #logoutModal .btn-close:hover {
     color: var(--foreground);
+}
+
+.btn-reset {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font: inherit !important;
+    cursor: pointer !important;
+    outline: inherit !important;
+    box-shadow: none !important;
+    color: var(--destructive-foreground);
 }

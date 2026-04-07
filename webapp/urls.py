@@ -10,4 +10,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('delete-account/', views.delete_account, name='deleteAccount'),
     path('view/<int:record_id>/', views.view_record, name='view_record'),
+    path('delete/<int:record_id>/', views.delete_record, name='delete_record'),
 ]
