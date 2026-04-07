@@ -1,0 +1,108 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<body class="container">
+  {% include 'components/navbar.html' %}
+  <!-- Search -->
+   <div class="db-header">
+    <div class="rv-header" style="margin: 0;">
+    <a href="javascript:history.back()" class="rv-back-btn" title="Back">
+      <img
+        src="{% static 'icons/back.svg' %}"
+        alt="edit icon"
+        width="14"
+        height="14"
+      />
+    </a>
+    <h1 class="rv-page-title">
+      "{{ query }}" Search Results
+      <span>Viewing  <strong style="color: var(--foreground);">{{ results|length }}</strong>  customers found</span>
+    </h1>
+  </div> 
+          <form action="{% url 'search' %}" method="GET" class="db-controls">
+   
+       <div class="db-search-wrap">
+         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+         </svg>
+         <input
+           type="search"
+           name="query"
+           value="{{ request.GET.query }}"
+           class="db-search-input"
+           placeholder="Search by name or ID…"
+         />
+       </div>
+       <button type="submit" class="db-search-btn">
+         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+         </svg>
+         Search
+       </button>
+     </form>
+   </div>
+
+  <div class="db-table-card">
+    <div class="db-table-scroll">
+      <table class="db-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Customer</th>
+            <th>Category</th>
+            <th>Phone</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Address</th>
+            <th>Joined</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% if results %} {% for record in results %}
+          <tr>
+            <td><span class="id-badge">{{ record.id }}</span></td>
+            <td>
+              <div class="name-cell">
+                <span class="name-text">{{ record.first_name|capfirst }} {{ record.last_name|capfirst }}</span>
+              </div>
+            </td>
+            <td><span class="cat-pill">{{ record.category }}</span></td>
+            <td class="td-muted">{{ record.phone }}</td>
+            <td class="td-muted">{{ record.tall }} <span style="font-size:.7rem;">cm</span></td>
+            <td class="td-muted">{{ record.weight }} <span style="font-size:.7rem;">kg</span></td>
+            <td class="td-muted" style="max-width:160px;overflow:hidden;text-overflow:ellipsis;">{{ record.address }}</td>
+            <td class="date-cell">{{ record.created_at|date:"d M Y" }}</td>
+            <td>
+              <a href="{% url 'view_record' record.id %}" class="btn-view">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                View
+              </a>
+            </td>
+          </tr>
+          {% endfor %} {% else %}
+          <tr>
+            <td colspan="9">
+              <div class="db-empty">
+                <div class="db-empty-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+                  </svg>
+                </div>
+                <h6>Not Found</h6>
+                <p>No results found for <strong>{{ query }}</strong></p>
+              </div>
+            </td>
+          </tr>
+
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+{% endblock content %}

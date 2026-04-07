@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Record
+from django.db.models import Q
+import logging
 
 
 
@@ -136,3 +138,25 @@ def update_record(request, record_id):
     
     return render(request, 'pages/update-record.html', context)
 
+logger = logging.getLogger(__name__)
+@login_required(login_url='login')
+def search(request):
+    query = request.GET.get('query')
+    results = []
+    try:
+        if query:
+            results = Record.objects.filter(Q(first_name__icontains=query) | Q(last_name__icontains=query) | Q(id__icontains=query))
+    except Exception as e:
+        logger.error('Error during search %s', e)
+        message_text = "Something went wrong, Try Again"
+        messages.add_message(request, messages.ERROR, message_text)
+
+    title = f'{"\"" + query + "\"" + " search results"}'
+    
+    context = {
+        'results': results,
+        'query': query,
+        'title': title
+    }
+
+    return render(request, 'pages/search.html', context=context)
