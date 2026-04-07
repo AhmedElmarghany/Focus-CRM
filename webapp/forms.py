@@ -92,3 +92,9 @@ class CreateRecordForm(forms.ModelForm):
         self.fields['address'].widget.attrs.update({
             'placeholder': 'Street, City',
         })
+
+
+class UpdateRecordForm(forms.ModelForm):
+    class Meta:
+        model = Record
+        fields = ['first_name', 'last_name', 'category', 'phone', 'tall', 'weight', 'address']

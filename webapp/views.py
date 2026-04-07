@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import CreateUserForm, LoginForm, CreateRecordForm
+from .forms import CreateUserForm, LoginForm, CreateRecordForm, UpdateRecordForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -112,3 +112,27 @@ def delete_record(request, record_id):
         record.delete()
         messages.add_message(request, messages.SUCCESS, "Customer Deleted Successfully")
     return redirect('dashboard')
+
+
+
+@login_required(login_url='login')
+def update_record(request, record_id):
+    record = get_object_or_404(Record, id=record_id)
+    form = UpdateRecordForm(instance=record)
+    if request.method == 'POST':
+        form = UpdateRecordForm(request.POST, instance=record)
+        if form.is_valid():
+            form.save()
+            message_text = f"{record.first_name.capitalize() + " " + record.last_name.capitalize()} Info Updated Successfully"
+            messages.add_message(request, messages.SUCCESS, message_text)
+            return redirect('dashboard')
+    
+    title = f'{"Update " + record.last_name.capitalize() + " Info"}'
+    
+    context = {
+        'form': form,
+        'title': title
+    }
+    
+    return render(request, 'pages/update-record.html', context)
+
