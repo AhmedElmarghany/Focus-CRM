@@ -3,6 +3,9 @@
 Customer Relationship Management (CRM) Landing page built with Django and Bootstrap.
 
 ## [Visit Live Demo](https://ahmedelmarghany.pythonanywhere.com/)
+
+## <span style="color:#9d8b57">Note</span>: I'm adding some <span style="color:red">Backend functionality</span> with UI, you can check it in <span style="color:green">[backend-integration](https://github.com/AhmedElmarghany/Focus-CRM/tree/backend-integration)</span> branch [I'm still working on it, not finished yet].
+
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
