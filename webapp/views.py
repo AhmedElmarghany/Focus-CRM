@@ -15,9 +15,13 @@ def register(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Account Created Successfully, Now Login")
-            return redirect('login')
+            user = form.save()
+
+            # login directly after signup
+            auth_login(request, user)
+
+            messages.success(request, "Account created successfully")
+            return redirect('index')
     else:
         form = CreateUserForm()
     
