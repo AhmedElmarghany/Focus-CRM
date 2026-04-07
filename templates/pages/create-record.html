@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <body class="container">
 
     {% include 'components/navbar.html' %}
     <br>
+    <!-- use the same styles of view-record.css for Header -->
+     <div class="rv-header">
+      <a href="javascript:history.back()" class="rv-back-btn" title="Back">
+        <img
+          src="{% static 'icons/back.svg' %}"
+          alt="edit icon"
+          width="14"
+          height="14"
+        />
+      </a>
+      <h1 class="rv-page-title">
+        Add Customer
+        <span>Enter details of the new customer</span>
+      </h1>
+    </div>
        <div class="cr-card">        
         <form method="POST">
             {% csrf_token %}
-            
             <!-- Personal info -->
             <div class="cr-section">
-              <h1 class="serif">Add New Customer</h1>
             <div class="cr-section-label">Personal information</div>
             <div class="cr-row">
               <div class="cr-field">
