@@ -26,12 +26,10 @@
 
       <div class="modal-footer d-flex">
         <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-        <form id="deleteForm" method="POST" class="btn btn-delete text-center">
+        <form id="deleteForm" method="POST" style="display: none;">
           {% csrf_token %}
-          <button type="submit" class="btn-reset">
-            Yes, Delete it
-          </button>
         </form> 
+        <button type="submit" form="deleteForm" class="btn btn-delete text-center">Yes, Delete it</button>
       </div>
 
     </div>
