@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CreateUserForm, LoginForm, CreateRecordForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
@@ -87,3 +87,11 @@ def dashboard(request):
     records = Record.objects.all()
     context = {'records': records, 'title': 'Focus | Dashboard'}
     return render(request, 'pages/dashboard.html', context)
+
+
+@login_required(login_url='login')
+def view_record(request, record_id):
+    record = get_object_or_404(Record, id=record_id)
+    context = {'record': record, 'title': f'Focus | {record.first_name.capitalize() + " " + record.last_name.capitalize()}'}
+
+    return render(request, 'pages/view_record.html', context)

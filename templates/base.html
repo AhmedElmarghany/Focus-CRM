@@ -18,6 +18,7 @@
     <link rel="stylesheet" href={% static 'css/form.css' %}>
     <link rel="stylesheet" href={% static 'css/create-recoed-form.css' %}>
     <link rel="stylesheet" href={% static 'css/dashboard.css' %}>
+    <link rel="stylesheet" href={% static 'css/view-record.css' %}>
     <link rel="stylesheet" href={% static 'css/modal.css' %}>
 </head>
 <body>
@@ -25,7 +26,8 @@
     {% block content %}
     {% endblock content %}
     {% include 'components/logout-modal.html' %}
-    {% include 'components/delete-modal.html' %}
+    {% include 'components/delete-account-modal.html' %}
+    {% include 'components/delete-customer-modal.html' %}
 
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/scrollTracker.js' %}"></script>
