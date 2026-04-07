@@ -20,9 +20,11 @@
     <link rel="stylesheet" href={% static 'css/dashboard.css' %}>
     <link rel="stylesheet" href={% static 'css/view-record.css' %}>
     <link rel="stylesheet" href={% static 'css/modal.css' %}>
+    <link rel="stylesheet" href={% static 'css/alert.css' %}>
 </head>
 <body>
 
+    {% include 'components/alert.html' %}
     {% block content %}
     {% endblock content %}
     {% include 'components/logout-modal.html' %}

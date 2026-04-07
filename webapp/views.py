@@ -16,7 +16,8 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Account Created Successfully")
+            messages.success(request, "Account Created Successfully, Now Login")
+            return redirect('login')
     else:
         form = CreateUserForm()
     
@@ -39,6 +40,8 @@ def login(request):
                 auth_login(request, user)
                 messages.add_message(request, messages.SUCCESS, "Successfull login")
                 return redirect('index')
+        else:
+            messages.error(request, "Invalid email or password")
 
     else:
         form = LoginForm()
@@ -51,6 +54,7 @@ def login(request):
 
 def logout(request):
     auth_logout(request)
+    messages.add_message(request, messages.SUCCESS, "Logout Successfully")
     return redirect('login')
 
 
@@ -72,7 +76,6 @@ def create_record(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, "Customer Added Successfully")
-            messages.add_message(request, messages.SUCCESS, "Customer Added Successfully")
             return redirect('dashboard')
     else:
         form = CreateRecordForm()
@@ -92,7 +95,8 @@ def dashboard(request):
 @login_required(login_url='login')
 def view_record(request, record_id):
     record = get_object_or_404(Record, id=record_id)
-    context = {'record': record, 'title': f'Focus | {record.first_name.capitalize() + " " + record.last_name.capitalize()}'}
+    title = f'Focus | {record.first_name.capitalize() + " " + record.last_name.capitalize()}'
+    context = {'record': record, 'title': title}
 
     return render(request, 'pages/view_record.html', context)
 
