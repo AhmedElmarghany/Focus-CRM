@@ -1,0 +1,81 @@
+{% load static %}
+{% if messages %}
+ <div class="toast-stack" id="toast-stack">
+  {% for message in messages %}
+    {% if message.tags == 'success' %}
+      {% with icon='<polyline points="20 6 9 17 4 12"/>' label='Success' variant='success' %}
+        <div class="toast-msg toast-{{ variant }}" role="alert">
+          <div class="toast-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              {{ icon|safe }}
+            </svg>
+          </div>
+          <div class="toast-body">
+            <div class="toast-title">{{ label }}</div>
+            <div class="toast-text">{{ message }}</div>
+          </div>
+        </div>
+      {% endwith %}
+    {% elif message.tags == 'error' %}
+    {% with icon='<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>' label='Error' variant='error' %}
+        <div class="toast-msg toast-{{ variant }}" role="alert">
+          <div class="toast-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              {{ icon|safe }}
+            </svg>
+          </div>
+          <div class="toast-body">
+            <div class="toast-title">{{ label }}</div>
+            <div class="toast-text">{{ message }}</div>
+          </div>
+        </div>
+      {% endwith %}
+        {% elif message.tags == 'warning' %}
+    {% with icon='<path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>' label='Warning' variant='warning' %}
+        <div class="toast-msg toast-{{ variant }}" role="alert">
+          <div class="toast-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              {{ icon|safe }}
+            </svg>
+          </div>
+          <div class="toast-body">
+            <div class="toast-title">{{ label }}</div>
+            <div class="toast-text">{{ message }}</div>
+          </div>
+        </div>
+      {% endwith %}
+  {% elif message.tags == 'info' %}
+    {% with icon='<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/>' label='Info' variant='info' %}
+        <div class="toast-msg toast-{{ variant }}" role="alert">
+          <div class="toast-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              {{ icon|safe }}
+            </svg>
+          </div>
+          <div class="toast-body">
+            <div class="toast-title">{{ label }}</div>
+            <div class="toast-text">{{ message }}</div>
+          </div>
+        </div>
+      {% endwith %}
+  {% else %}
+    {% with icon='<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>' label='Notice' variant='debug' %}
+        <div class="toast-msg toast-{{ variant }}" role="alert">
+          <div class="toast-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              {{ icon|safe }}
+            </svg>
+          </div>
+          <div class="toast-body">
+            <div class="toast-title">{{ label }}</div>
+            <div class="toast-text">{{ message }}</div>
+          </div>
+        </div>
+      {% endwith %}
+
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script src="{% static 'js/alert.js' %}"></script>
+{% endif %}

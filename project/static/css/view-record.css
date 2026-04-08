@@ -1,0 +1,438 @@
+.rv-page {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    padding: 2.5rem 1rem 5rem;
+    color: var(--foreground);
+}
+
+/* ── Page header ── */
+.rv-header {
+    max-width: 760px;
+    margin: 0 auto 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.rv-back-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.rv-back-btn:hover {
+    background: var(--secondary);
+    border-color: #c5bca4;
+    color: var(--foreground);
+}
+
+.rv-page-title {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.rv-page-title span {
+    font-size: 0.78rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: var(--muted-foreground);
+    display: block;
+    margin-top: 3px;
+}
+
+/* ── Main card ── */
+.rv-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.8);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(42, 30, 0, 0.06), 0 1px 3px rgba(42, 30, 0, 0.04);
+}
+
+/* ── Profile hero ── */
+.rv-profile-hero {
+    background: var(--primary);
+    padding: 2rem 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle geo bg */
+.rv-profile-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(173, 204, 240, 0.10) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.rv-profile-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(173, 204, 240, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.rv-profile-inner {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.rv-profile-info {
+    padding-bottom: 1.4rem;
+}
+
+.rv-profile-info h2 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--primary-foreground);
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    line-height: 1.2;
+}
+
+.rv-category-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(221, 234, 250, 0.15);
+    border: 1px solid rgba(221, 234, 250, 0.22);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+}
+
+.rv-category-pill .rv-id-badge {
+    display: none;
+}
+
+.rv-profile-meta {
+    margin-left: auto;
+    padding-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+.rv-id-badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(251, 252, 254, 0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.rv-joined {
+    font-size: 0.75rem;
+    color: rgba(251, 252, 254, 0.45);
+    font-weight: 300;
+}
+
+/* ── Section ── */
+.rv-section {
+    padding: 1.5rem 1.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.rv-section:last-of-type {
+    border-bottom: none;
+}
+
+/* Avatar offset spacer */
+.rv-section.first {
+    padding-top: 2rem;
+}
+
+.rv-section-label {
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rv-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ── Data grid ── */
+.rv-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.rv-data-item {
+    padding: 0.85rem 1rem 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.rv-date-item-joined {
+    display: none;
+}
+
+/* Remove bottom border on last two items */
+.rv-data-grid .rv-data-item:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+/* Full-width items */
+.rv-data-item.full {
+    grid-column: 1 / -1;
+    padding-right: 0;
+}
+
+.rv-data-item.full:last-child {
+    border-bottom: none;
+}
+
+.rv-data-label {
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 4px;
+}
+
+.rv-data-value {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--foreground);
+    line-height: 1.4;
+}
+
+.rv-data-value.empty {
+    color: var(--muted-foreground);
+    font-style: italic;
+    font-size: 0.82rem;
+}
+
+/* Stat chips for physical metrics */
+.rv-stat-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 3px;
+    background: var(--accent);
+    border: 1px solid rgba(65, 103, 145, 0.15);
+    border-radius: var(--radius);
+    padding: 4px 10px;
+}
+
+.rv-stat-chip .num {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-foreground);
+    line-height: 1;
+}
+
+.rv-stat-chip .unit {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--accent-foreground);
+    opacity: 0.7;
+}
+
+/* BMI indicator */
+.rv-bmi-bar {
+    margin-top: 0.6rem;
+}
+
+.rv-bmi-track {
+    height: 5px;
+    border-radius: 999px;
+    background: var(--secondary);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.rv-bmi-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(to right, #adccf0, #416791);
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rv-bmi-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    color: var(--muted-foreground);
+}
+
+/* ── Footer ── */
+.rv-footer {
+    padding: 1.2rem 1.75rem;
+    background: var(--muted);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.rv-footer-left {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rv-footer-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.rv-btn-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.58rem 1.15rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+}
+
+.rv-btn-edit:hover {
+    background: #162f50;
+    color: var(--primary-foreground);
+    box-shadow: 0 4px 16px rgba(12, 37, 63, 0.22);
+}
+
+.rv-btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.58rem 1.15rem;
+    background: transparent;
+    color: var(--destructive);
+    border: 1px solid rgba(231, 0, 11, 0.3);
+    border-radius: var(--radius);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+
+.rv-btn-delete:hover {
+    background: #fde8e8;
+    border-color: rgba(231, 0, 11, 0.5);
+    color: var(--destructive);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .rv-page {
+        padding: 2rem 0.75rem 4rem;
+    }
+
+    .rv-section {
+        padding: 1.25rem 1.1rem;
+    }
+
+    .rv-section.first {
+        padding-top: 1.75rem;
+    }
+
+    .rv-footer {
+        padding: 1rem 1.1rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rv-footer-actions {
+        flex-direction: column-reverse;
+    }
+
+    .rv-btn-edit,
+    .rv-btn-delete {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .rv-data-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rv-data-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .rv-data-item:last-child {
+        border-bottom: none !important;
+    }
+
+    .rv-profile-meta {
+        display: none;
+    }
+
+    .rv-date-item-joined {
+        display: block;
+    }
+
+    .rv-category-pill .rv-id-badge {
+        display: block;
+    }
+}
+
+@media (max-width: 420px) {
+    .rv-profile-hero {
+        padding: 1.5rem 1.1rem 0;
+    }
+}

@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('/static/fonts/IBMPlexSans.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('/static/fonts/IBMPlexSans-Italic.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'IBM Plex Serif';
+    src: url('/static/fonts/IBMPlexSerif.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'IBM Plex Serif';
+    src: url('/static/fonts/IBMPlexSerif-LightItalic.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+  /* Base */
+  --background: #fffdf7;
+  --foreground: #2a1e00;
+
+  /* Cards */
+  --card: #fcf9f1;
+  --card-foreground: #2a1e00;
+
+  /* Popover */
+  --popover: #fffdf7;
+  --popover-foreground: #2a1e00;
+
+  /* Primary (blue) */
+  --primary: #0c253f;
+  --primary-foreground: #fbfcfe;
+
+  /* Secondary */
+  --secondary: #eee8d7;
+  --secondary-foreground: #2a1e00;
+
+  /* Muted */
+  --muted: #f4f0e4;
+  --muted-foreground: #9d8b57;
+
+  /* Accent */
+  --accent: #ddeafa;
+  --accent-foreground: #416791;
+
+  /* Destructive */
+  --destructive: #e7000b;
+  --destructive-foreground: #fafafa;
+
+  /* Borders & inputs */
+  --border: #e2d9bf;
+  --input: #eee8d7;
+  --ring: #8eb7e650;
+
+  /* Charts */
+  --chart-1: #0c253f;
+  --chart-2: #adccf0;
+  --chart-3: #9d8b57;
+  --chart-4: #c0daf7;
+  --chart-5: #c9bb90;
+
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar: #fcf9f1;
+  --sidebar-foreground: #2a1e00;
+
+  --sidebar-primary: #0c253f;
+  --sidebar-primary-foreground: #fbfcfe;
+
+  --sidebar-accent: #eee8d7;
+  --sidebar-accent-foreground: #2a1e00;
+
+  --sidebar-border: #e2d9bf;
+  --sidebar-ring: #8eb7e6;
+}
+
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: 15px;
+    line-height: 1.6;
+}
+html {
+    scroll-behavior: smooth;
+}

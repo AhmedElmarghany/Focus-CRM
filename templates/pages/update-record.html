@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body class="container">
+  {% include 'components/navbar.html' %}
+    <!-- use the same styles of view-record.css & create-record.css-->
+<br>
+     <div class="rv-header">
+      <a href="javascript:history.back()" class="rv-back-btn" title="Back">
+        <img
+          src="{% static 'icons/back.svg' %}"
+          alt="edit icon"
+          width="14"
+          height="14"
+        />
+      </a>
+      <h1 class="rv-page-title">
+        Update Customer Info
+        <span>Viewing the current details, Update it</span>
+      </h1>
+    </div>
+
+<div class="cr-card">        
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Personal info -->
+        <div class="cr-section">
+        <div class="cr-section-label">Personal information</div>
+        <div class="cr-row">
+            <div class="cr-field">
+            <label for="id_first_name">First name</label>
+            {{ form.first_name }}
+            {{ form.first_name.errors }}
+            </div>
+            <div class="cr-field">
+            <label for="id_last_name">Last name</label>
+            {{ form.last_name }}
+            {{ form.last_name.errors }}
+            </div>
+        </div>
+        </div>
+    
+        <!-- Membership -->
+        <div class="cr-section">
+        <div class="cr-section-label">Membership</div>
+        <div class="cr-field">
+            <label for="id_category">Category</label>
+            {{ form.category }}
+            {{ form.category.errors }}
+        </div>
+        </div>
+    
+        <!-- Contact -->
+        <div class="cr-section">
+        <div class="cr-section-label">Contact</div>
+        <div class="cr-row">
+            <div class="cr-field">
+            <label for="id_phone">Phone number</label>
+            {{ form.phone }}
+            {{ form.phone.errors }}
+            </div>
+            <div class="cr-field">
+            <label for="id_address">Address</label>
+            {{ form.address }}
+            {{ form.address.errors }}
+            </div>
+        </div>
+        </div>
+    
+        <!-- Physical stats -->
+        <div class="cr-section">
+        <div class="cr-section-label">Physical stats</div>
+        <div class="cr-row">
+            <div class="cr-field">
+            <label for="id_tall">Height</label>
+            <div class="cr-input-wrap">
+                {{ form.tall }}
+                {{ form.tall.errors }}
+                <span class="cr-unit">cm</span>
+            </div>
+            </div>
+            <div class="cr-field">
+            <label for="id_weight">Weight</label>
+            <div class="cr-input-wrap">
+                {{ form.weight }}
+                {{ form.weight.errors }}
+                <span class="cr-unit">kg</span>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Footer actions -->
+        <div class="cr-footer">
+        <a href="{% url 'dashboard' %}" class="cr-btn-cancel">Cancel</a>
+        <button type="submit" class="cr-btn-submit">
+            Save Customer
+        </button>
+        </div>
+    
+    </form>
+</div>
+<br>
+
+</body>
+
+{% endblock content %}

@@ -5,7 +5,7 @@
 >
   <div class="container-fluid">
     <!-- Logo -->
-      <a class="navbar-brand col-lg-3 me-0" href="#">
+      <a class="navbar-brand col-lg-3 me-0" href="{% url 'index' %}">
         <img src="{% static 'logo.svg' %}" alt="logo" width="22px" />
         <strong class="color-primary">Focus</strong>
       </a>
@@ -40,10 +40,51 @@
         </li>
       </ul>
       <!-- Buttons -->
-      <div class="d-sm-flex d-lg-flex justify-content-sm-end justify-content-lg-end gap-2 ms-lg-auto">
-        <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login">Login</a>
-        <a class="btn btn-primary my-sm-0 w-100 w-lg-auto btn-nav-signup">Signup</a>
+      <div class="d-sm-flex d-lg-flex justify-content-sm-end justify-content-lg-end gap-2 ms-lg-auto ">
+      {% if user.is_authenticated %}
+      <div class="dd-trigger md-auto my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0" onclick="this.classList.toggle('open')">
+        <div class="dd-avatar">{{ user.first_name|first }}{{ user.last_name|first }}</div>
+        <span class="dd-name">Hi, {{ user.first_name|capfirst }}</span>
+        <span class="dd-chevron">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+        <div class="dd-menu">
+          <div class="dd-header">
+            <div class="dname">{{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</div>
+            <div class="demail">{{ user.first_name }}@example.com</div>
+          </div>
+          <a
+              class="dd-item delete"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteAccountModal"
+            >
+              <img
+                src="{% static 'icons/delete.svg' %}"
+                alt="delete icon"
+                width="13"
+                height="13"
+              />
+              Delete account
+            </a>
+
+          <a class="dd-item logout" type="button" data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Sign out
+          </a>
+        </div>
       </div>
+
+      {% else %}
+        <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login" href="{% url 'login' %}">Login</a>
+        <a class="btn btn-primary my-sm-0 w-100 w-lg-auto btn-nav-signup" href="{% url 'signup' %}">Signup</a>
+      {% endif %}
+      </div>
+
+      <!-- <div class="d-sm-flex d-lg-flex justify-content-sm-end justify-content-lg-end gap-2 ms-lg-auto">
+        <a class="btn btn-secondary my-sm-0 w-100 w-lg-auto mb-2 mb-lg-0 btn-nav-login" href="{% url 'login' %}">Login</a>
+        <a class="btn btn-primary my-sm-0 w-100 w-lg-auto btn-nav-signup" href="{% url 'signup' %}">Signup</a>
+      </div> -->
     </div>
   </div>
 </nav>

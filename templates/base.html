@@ -15,15 +15,26 @@
     <link rel="stylesheet" href={% static 'css/pricing.css' %}>
     <link rel="stylesheet" href={% static 'css/faq.css' %}>
     <link rel="stylesheet" href={% static 'css/footer.css' %}>
+    <link rel="stylesheet" href={% static 'css/form.css' %}>
+    <link rel="stylesheet" href={% static 'css/create-recoed-form.css' %}>
+    <link rel="stylesheet" href={% static 'css/dashboard.css' %}>
+    <link rel="stylesheet" href={% static 'css/view-record.css' %}>
+    <link rel="stylesheet" href={% static 'css/modal.css' %}>
+    <link rel="stylesheet" href={% static 'css/alert.css' %}>
+    <link rel="stylesheet" href={% static 'css/404.css' %}>
 </head>
-<body class="container">
-    {% include 'components/navbar.html' %}
+<body>
 
+    {% include 'components/alert.html' %}
     {% block content %}
     {% endblock content %}
+    {% include 'components/logout-modal.html' %}
+    {% include 'components/delete-account-modal.html' %}
+    {% include 'components/delete-customer-modal.html' %}
 
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/scrollTracker.js' %}"></script>
+    <script src="{% static 'js/form.js' %}"></script>
 </body>
 </html>
 

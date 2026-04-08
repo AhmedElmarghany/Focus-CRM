@@ -1,0 +1,260 @@
+.hero {
+    position: relative;
+    padding-top: 56px;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+/* subtle grid background */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-size: 80px 80px;
+    z-index: 0;
+
+    background-image:
+        linear-gradient(to right, var(--border) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+
+    /* Fades the grid out toward the edges */
+    -webkit-mask-image: radial-gradient(circle, black 70%, transparent 80%);
+    mask-image: radial-gradient(circle, black 70%, transparent 80%);
+
+}
+
+.hero>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* ─── Badge ──────────────────────────────────────────────────── */
+.hero-badge-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-badge-container>div {
+    padding: .2rem .5rem 0.2rem 0.2rem;
+    border-radius: 20rem;
+    background-color: var(--muted);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: .875rem;
+    color: var(--primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero-badge__pill {
+    background: var(--muted-foreground);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    white-space: nowrap;
+}
+
+.hero-badge__text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.hero-badge__arrow {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* ─── Headline ───────────────────────────────────────────────── */
+.hero-title {
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* fluid type scale: clamp(min, preferred, max) */
+.hero-title {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+}
+
+/* ─── Subheading ─────────────────────────────────────────────── */
+.hero-sub {
+    font-size: clamp(.95rem, 1.6vw, 1.125rem);
+    color: var(--foreground);
+    font-weight: 400;
+    line-height: 1.65;
+    max-width: 580px;
+}
+
+/* ─── CTA buttons ────────────────────────────────────────────── */
+.btn-cta-primary {
+    font-size: .88rem;
+    font-weight: 500;
+    color: var(--foreground);
+    border-radius: var(--radius);
+    padding: .38rem 3rem;
+    background-color: var(--muted);
+    transition: border-color .18s, color .18s;
+    border: 2px solid var(--border);
+    font-size: 1rem;
+    letter-spacing: .01em;
+    white-space: nowrap;
+}
+
+.btn-cta-primary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--muted);
+
+}
+
+.btn-cta-secondary {
+    border: 2px solid var(--border);
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--primary-foreground);
+    border-radius: var(--radius);
+    padding: .38rem 3rem;
+    background-color: var(--primary);
+    transition: color .18s;
+}
+
+.btn-cta-secondary:hover {
+    color: var(--primary-foreground);
+    background-color: var(--primary);
+    box-shadow: 0px 0px 10px var(--primary);
+    transition: all .3s;
+}
+
+/* ─── Dashboard screenshot container ────────────────────────── */
+.dashboard-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+/* PC: wide rounded card with shadow */
+.dashboard-frame {
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, .06),
+        0 24px 80px rgba(0, 0, 0, .14);
+    background: var(--secondary);
+}
+
+.dashboard-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ─── Responsive tweaks ──────────────────────────────────────── */
+
+/* Mobile (< 576 px): single‑column, full-width buttons */
+@media (max-width: 575.98px) {
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero::before {
+        background-size: 60px 60px;
+        z-index: 0;
+
+        background-image:
+            linear-gradient(to right, var(--border) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+
+        /* Fades the grid out toward the edges */
+        -webkit-mask-image: radial-gradient(closest-side, black 70%, transparent 80%);
+        mask-image: radial-gradient(closest-side, black 70%, transparent 80%);
+
+
+    }
+
+    .hero-badge__text {
+        font-size: .75rem;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+        letter-spacing: -.015em;
+    }
+
+    .hero-sub {
+        max-width: 100%;
+        font-size: .95rem;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard-wrap {
+        margin-top: 40px;
+    }
+
+    .dashboard-frame {
+        border-radius: 14px 14px 0 0;
+    }
+
+    .companies__logos {
+        gap: 24px 36px;
+    }
+
+    .logo-item__name {
+        font-size: .9rem;
+    }
+    .dashboard-frame {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    box-shadow:
+        0 0 0 0px rgba(0, 0, 0, .06),
+        0 0px 0px rgba(0, 0, 0, .14);
+    background: transparent;
+    }
+}
+
+/* Tablet (576 – 991 px): still centred, moderate scale */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .hero-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .dashboard-frame {
+        border-radius: 16px 16px 0 0;
+    }
+    
+}
+
+/* Large desktop (≥ 1200 px) */
+@media (min-width: 1200px) {
+    .hero {
+        padding-top: 72px;
+    }
+
+    .hero-title {
+        font-size: 4.25rem;
+    }
+}

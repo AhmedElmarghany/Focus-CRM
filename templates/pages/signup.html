@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div>
+    <div class="row g-0" style="min-height: 100vh">
+      {% include 'components/forms-left-panel.html' %}
+
+      <!-- ── Right Panel ── -->
+      <div class="col-md-7 col-lg-7 panel-right">
+        <div class="form-card">
+          <h1 class="fade-up serif">Create account</h1>
+          <div class="fields-divider"></div>
+
+          <form method="POST">
+            {% csrf_token %}
+            <!-- Name row -->
+            <div class="field-row fade-up delay-1">
+              <div class="field-group">
+                <label for="id_first_name">First name</label>
+                <!-- <input type="text" id="fname" placeholder="Jane" autocomplete="given-name" /> -->
+                {{ signup_form.first_name }} {{ signup_form.first_name.errors }}
+              </div>
+              <div class="field-group">
+                <label for="id_last_name">Last name</label>
+                {{ signup_form.last_name }} {{ signup_form.last_name.errors }}
+              </div>
+            </div>
+
+            <!-- username -->
+            <div class="field-group fade-up delay-2">
+              <label for="username">username</label>
+              {{ signup_form.username }} {{ signup_form.username.errors }}
+            </div>
+
+            <div class="fields-divider fade-up delay-2"></div>
+
+            <!-- Password -->
+            <div class="field-group fade-up delay-3">
+              <label for="id_password1">Password</label>
+              <div class="password-wrapper">
+                {{ signup_form.password1 }} {{ signup_form.password1.errors }}
+                <button
+                  type="button"
+                  class="toggle-pw"
+                  onclick="togglePw('password', 'eye1')"
+                  aria-label="Toggle password visibility"
+                >
+                  <svg
+                    id="eye1"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+              <div class="strength-bar">
+                <div class="strength-seg" id="s1"></div>
+                <div class="strength-seg" id="s2"></div>
+                <div class="strength-seg" id="s3"></div>
+                <div class="strength-seg" id="s4"></div>
+              </div>
+              <div class="strength-label" id="strength-label"></div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="field-group fade-up delay-4">
+              <label for="id_password2">Confirm password</label>
+              <div class="password-wrapper">
+                {{ signup_form.password2 }} {{ signup_form.password2.errors }}
+
+                <button
+                  type="button"
+                  class="toggle-pw"
+                  onclick="togglePw('confirm-password', 'eye2')"
+                  aria-label="Toggle password visibility"
+                >
+                  <svg
+                    id="eye2"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+              <div class="match-indicator" id="match-indicator">
+                <div class="match-dot" id="match-dot"></div>
+                <span
+                  id="match-text"
+                  style="font-family: &quot;IBM Plex Sans&quot;, sans-serif"
+                ></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary-custom fade-up delay-5">
+              Create my account
+            </button>
+          </form>
+          <p class="subtitle fade-up delay-6">
+            Already have one? <a href="{% url 'login' %}">Login</a>
+          </p>
+
+          <p class="footnote fade-up delay-7">
+            Protected by encryption &nbsp;·&nbsp; No credit card required
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,233 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<body class="container">
+  {% include 'components/navbar.html' %}
+
+  <div class="rv-page">
+    <!-- Page header -->
+    <div class="rv-header">
+      <a href="javascript:history.back()" class="rv-back-btn" title="Back">
+        <img
+          src="{% static 'icons/back.svg' %}"
+          alt="edit icon"
+          width="14"
+          height="14"
+        />
+      </a>
+      <h1 class="rv-page-title">
+        Customer Profile
+        <span>Viewing record details</span>
+      </h1>
+    </div>
+
+    <!-- Main card -->
+    <div class="rv-card">
+      <!-- Profile hero -->
+      <div class="rv-profile-hero">
+        <div class="rv-profile-inner">
+          <div class="rv-profile-info">
+            <h2>
+              {{ record.first_name|capfirst }} {{ record.last_name|capfirst }}
+            </h2>
+            <span class="rv-category-pill">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="6" />
+              </svg>
+              {{ record.category }}
+              <span class="rv-id-badge">ID #{{ record.id }}</span>
+            </span>
+          </div>
+
+          <div class="rv-profile-meta">
+            <span class="rv-id-badge">ID #{{ record.id }}</span>
+            <span class="rv-joined"
+              >Joined {{ record.created_at|date:"M d, Y" }}</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact section -->
+      <div class="rv-section">
+        <div class="rv-section-label">Contact</div>
+        <div class="rv-data-grid">
+          <div class="rv-data-item">
+            <div class="rv-data-label">Phone</div>
+            <div class="rv-data-value">
+              {% if record.phone %}
+              <a
+                href="tel:{{ record.phone }}"
+                style="
+                  color: var(--accent-foreground);
+                  text-decoration: none;
+                  font-weight: 500;
+                "
+              >
+                {{ record.phone }}
+              </a>
+              {% else %}
+              <span class="empty">Not provided</span>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="rv-data-item rv-date-item-joined">
+            <div class="rv-data-label">Join date</div>
+            <div class="rv-data-value">
+              {{ record.created_at|date:"F d, Y" }}
+            </div>
+          </div>
+
+          <div class="rv-data-item">
+            <div class="rv-data-label">Address</div>
+            <div class="rv-data-value">
+              {% if record.address %}{{ record.address }}{% else %}<span
+                class="empty"
+                >Not provided</span
+              >{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Physical stats section -->
+      <div class="rv-section">
+        <div class="rv-section-label">Physical stats</div>
+        <div class="rv-data-grid">
+          <div class="rv-data-item">
+            <div class="rv-data-label">Height</div>
+            <div class="rv-data-value">
+              <div class="rv-stat-chip">
+                <span class="num">{{ record.tall }}</span>
+                <span class="unit">cm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rv-data-item">
+            <div class="rv-data-label">Weight</div>
+            <div class="rv-data-value">
+              <div class="rv-stat-chip">
+                <span class="num">{{ record.weight }}</span>
+                <span class="unit">kg</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BMI row (calculated client-side) -->
+          <div class="rv-data-item full" id="bmi-row" style="display: none">
+            <div class="rv-data-label">BMI estimate</div>
+            <div class="rv-data-value">
+              <span
+                id="bmi-value"
+                style="font-weight: 500; color: var(--foreground)"
+              ></span>
+              <span
+                id="bmi-cat"
+                style="
+                  font-size: 0.78rem;
+                  color: var(--muted-foreground);
+                  margin-left: 6px;
+                "
+              ></span>
+              <div class="rv-bmi-bar">
+                <div class="rv-bmi-track">
+                  <div
+                    class="rv-bmi-fill"
+                    id="bmi-fill"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <div class="rv-bmi-labels">
+                  <span>Underweight</span><span>Normal</span
+                  ><span>Overweight</span><span>Obese</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer actions -->
+      <div class="rv-footer">
+        <div class="rv-footer-actions">
+          <!-- Delete button — triggers confirmation modal -->
+          <button
+            type="button"
+            class="rv-btn-delete"
+            data-bs-toggle="modal"
+            data-url="{% url 'delete_record' record.id %}"
+            onclick="deleteCustomer(this)"
+            data-bs-target="#deleteCustomerModal"
+          >
+            <!-- delete icon -->
+            <img
+              src="{% static 'icons/delete-red.svg' %}"
+              alt="delete icon"
+              width="14"
+              height="14"
+            />
+            Delete Customer
+          </button>
+
+          <!-- Edit button -->
+          <a href="{% url 'update-record' record.id %}" class="rv-btn-edit">
+            <img
+              src="{% static 'icons/edit.svg' %}"
+              alt="edit icon"
+              width="14"
+              height="14"
+            />
+            Edit Customer
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- BMI calculator -->
+<script>
+  (function () {
+    const tall = parseFloat("{{ record.tall }}");
+    const weight = parseFloat("{{ record.weight }}");
+
+    if (!tall || !weight || isNaN(tall) || isNaN(weight)) return;
+
+    const heightM = tall / 100;
+    const bmi = weight / (heightM * heightM);
+    const bmiRounded = Math.round(bmi * 10) / 10;
+
+    let cat = "";
+    let pct = 0;
+
+    if (bmi < 18.5) {
+      cat = "Underweight";
+      pct = (bmi / 18.5) * 22;
+    } else if (bmi < 25) {
+      cat = "Normal weight";
+      pct = 22 + ((bmi - 18.5) / 6.5) * 28;
+    } else if (bmi < 30) {
+      cat = "Overweight";
+      pct = 50 + ((bmi - 25) / 5) * 25;
+    } else {
+      cat = "Obese";
+      pct = Math.min(75 + ((bmi - 30) / 10) * 25, 98);
+    }
+
+    document.getElementById("bmi-value").textContent = bmiRounded;
+    document.getElementById("bmi-cat").textContent = "— " + cat;
+    document.getElementById("bmi-row").style.display = "block";
+
+    setTimeout(() => {
+      document.getElementById("bmi-fill").style.width = pct + "%";
+    }, 300);
+  })();
+  function deleteCustomer(button) {
+    const recordId = button.getAttribute("data-url");
+    const url = button.getAttribute("data-url");
+
+    document.getElementById("deleteForm").action = url;
+  }
+</script>
+
+{% endblock content %}
