@@ -124,7 +124,7 @@
 }
 
 .btn-cta-secondary {
-    border: 2px solid var(--border);
+    /* border: 2px solid var(--border); */
     font-weight: 600;
     font-size: 1rem;
     white-space: nowrap;
@@ -225,15 +225,34 @@
     .logo-item__name {
         font-size: .9rem;
     }
+
     .dashboard-frame {
-    position: relative;
-    overflow: hidden;
-    border: 0;
-    box-shadow:
-        0 0 0 0px rgba(0, 0, 0, .06),
-        0 0px 0px rgba(0, 0, 0, .14);
-    background: transparent;
+        position: relative;
+        overflow: hidden;
+        border: 0;
+        box-shadow:
+            0 0 0 0px rgba(0, 0, 0, .06),
+            0 0px 0px rgba(0, 0, 0, .14);
+        background: transparent;
     }
+}
+
+/* xs screens */
+@media (max-width: 380px) {
+    .hero-badge__pill {
+        padding: 4px 7px;
+        font-size: .65rem;
+    }
+
+    .hero-badge__text {
+        font-size: .65rem;
+    }
+
+    .hero-badge {
+        gap: 6px;
+    }
+
+
 }
 
 /* Tablet (576 – 991 px): still centred, moderate scale */
@@ -245,7 +264,7 @@
     .dashboard-frame {
         border-radius: 16px 16px 0 0;
     }
-    
+
 }
 
 /* Large desktop (≥ 1200 px) */

@@ -29,7 +29,7 @@
 }
 
 .faq__contact a {
-    color: var(--primary);
+    color: var(--accent-foreground);
     font-weight: 600;
     text-decoration: none;
 }
