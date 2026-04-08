@@ -352,11 +352,11 @@
           <div class="ct-field-row">
             <div class="ct-field">
               <label for="ct_fname">First name</label>
-              <input type="text" id="ct_fname" placeholder="Jane" required />
+              <input type="text" id="ct_fname" placeholder="Jane" name="first_name" required />
             </div>
             <div class="ct-field">
               <label for="ct_lname">Last name</label>
-              <input type="text" id="ct_lname" placeholder="Doe" required />
+              <input type="text" id="ct_lname" placeholder="Doe" name="last_name" required />
             </div>
           </div>
 
@@ -366,23 +366,24 @@
               type="email"
               id="ct_email"
               placeholder="jane@company.com"
+              name="work_email"
               required
             />
           </div>
 
           <div class="ct-field">
             <label for="ct_phone">Phone number</label>
-            <input type="tel" id="ct_phone" placeholder="+20 100 000 0000" />
+            <input type="tel" id="ct_phone" placeholder="+20 100 000 0000" name="phone" />
           </div>
 
           <div class="ct-field">
             <label for="ct_company">Company name</label>
-            <input type="text" id="ct_company" placeholder="Your company" />
+            <input type="text" id="ct_company" placeholder="Your company" name="company_name" />
           </div>
 
           <div class="ct-field">
             <label for="ct_team">Team size</label>
-            <select id="ct_team">
+            <select id="ct_team" name="company_size">
               <option value="" selected>— select —</option>
               <option>1 – 5</option>
               <option>6 – 20</option>
@@ -397,6 +398,7 @@
             <textarea
               id="ct_msg"
               placeholder="Tell us about your goals or questions…"
+              name="message"
             ></textarea>
           </div>
         </div>
