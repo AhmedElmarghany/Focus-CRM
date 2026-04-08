@@ -1,8 +1,8 @@
 {% extends 'base.html' %} 
 {% load static %}
 {% block content %}
-<body class="container">
-  {% include 'components/navbar.html' %}
+{% include 'components/navbar.html' %}
+<div class="container">
   <!-- Search -->
    <div class="db-header">
     <div class="rv-header" style="margin: 0;">
@@ -104,5 +104,5 @@
       </table>
     </div>
   </div>
-</body>
+</div>
 {% endblock content %}
