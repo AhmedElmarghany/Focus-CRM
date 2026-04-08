@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+<div class="nf-page">
+
+  <!-- Main -->
+  <main class="nf-main">
+    <div class="nf-blob-1"></div>
+    <div class="nf-blob-2"></div>
+
+    <div class="nf-content">
+
+      <!-- Big 404 with floating card -->
+      <div class="nf-code-wrap">
+        <span class="nf-code-bg">404</span>
+        <div class="nf-code-overlay">
+          <div class="nf-floating-card">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <div class="nf-fc-text">
+              <div class="nf-fc-label">Status</div>
+              <div class="nf-fc-value">Page not found</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eyebrow -->
+      <div>
+        <span class="nf-eyebrow">
+          <span class="nf-eyebrow-dot"></span>
+          Error 404
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="nf-heading">
+        Looks like you've<br /><em>wandered off the map</em>
+      </h1>
+
+      <!-- Body -->
+      <p class="nf-body">
+        The page you're looking for doesn't exist or may have been moved. Let's get you back on track.
+      </p>
+
+      <!-- Actions -->
+      <div class="nf-actions">
+        <a href="javascript:history.back()" class="nf-btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Go back
+        </a>
+        <a href="{% url 'index' %}" class="nf-btn-primary">
+          Go to Home
+        </a>
+      </div>
+
+      <!-- Quick links -->
+      <div class="nf-links">
+        <a href="{% url 'index' %}" class="nf-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+          </svg>
+          Customers
+        </a>
+        <a href="{% url 'index' %}" class="nf-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Contact us
+        </a>
+        <a href="{% url 'index' %}" class="nf-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          Help & FAQ
+        </a>
+      </div>
+
+    </div>
+  </main>
+</div>
+</body>
+{% endblock content %}

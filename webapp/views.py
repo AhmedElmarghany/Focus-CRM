@@ -160,3 +160,18 @@ def search(request):
     }
 
     return render(request, 'pages/search.html', context=context)
+
+def custom_page_not_found(request, exception):
+    context = {
+        'title': "404 Page Not Found"
+    }
+
+    return render(request, 'pages/404.html', status=404, context=context)
+
+# 404 page for test
+def test_page_not_found(request):
+    context = {
+        'title': "404 Page Not Found"
+    }
+    
+    return render(request, 'pages/404.html', context=context)
