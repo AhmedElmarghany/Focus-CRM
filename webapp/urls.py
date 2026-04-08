@@ -14,4 +14,5 @@ urlpatterns = [
     path('update-record/<int:record_id>/', views.update_record, name='update-record'),
     path('search', views.search, name='search'),
     path('404/', views.test_page_not_found, name='notfound'),
+    path('contact-us/', views.contact_us, name='contact-us'),
 ]

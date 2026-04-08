@@ -175,3 +175,11 @@ def test_page_not_found(request):
     }
     
     return render(request, 'pages/404.html', context=context)
+
+
+def contact_us(request):
+    context = {
+        'title': "Focus | Contact Us"
+    }
+    
+    return render(request, 'pages/contact-us.html', context=context)

@@ -1,0 +1,701 @@
+.ct-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 253, 247, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 0;
+}
+
+.ct-nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ct-brand {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    letter-spacing: 0.03em;
+}
+
+.ct-brand-mark {
+    width: 26px;
+    height: 26px;
+    border: 1.5px solid rgba(12, 37, 63, 0.3);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ct-brand-dot {
+    width: 9px;
+    height: 9px;
+    background: var(--accent-foreground);
+    border-radius: 2px;
+}
+
+.ct-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.845rem;
+    font-weight: 400;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.ct-nav-back:hover {
+    color: var(--foreground);
+}
+
+/* ─── Hero strip ─── */
+.ct-hero {
+    background: var(--primary);
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ct-hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(173, 204, 240, 0.12) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* Decorative geo circles */
+.ct-hero-geo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.ct-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(221, 234, 250, 0.12);
+    border: 1px solid rgba(221, 234, 250, 0.2);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.ct-hero-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+.ct-hero h1 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    color: var(--primary-foreground);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.ct-hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.ct-hero p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(251, 252, 254, 0.6);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+/* ─── Trust badges ─── */
+.ct-trust-row {
+    background: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+}
+
+.ct-trust-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.ct-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.775rem;
+    font-weight: 400;
+    color: var(--muted-foreground);
+}
+
+.ct-trust-item svg {
+    color: var(--accent-foreground);
+    flex-shrink: 0;
+}
+
+/* ─── Main content ─── */
+.ct-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+/* ── Left: info panel ── */
+.ct-info-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 0.75rem;
+}
+
+.ct-info-heading {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400;
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.ct-info-heading em {
+    font-style: italic;
+    color: var(--accent-foreground);
+}
+
+.ct-info-body {
+    font-size: 0.915rem;
+    font-weight: 300;
+    color: var(--muted-foreground);
+    line-height: 1.8;
+    margin-bottom: 2.25rem;
+    max-width: 440px;
+}
+
+/* Feature list */
+.ct-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.ct-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.ct-feature-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: calc(var(--radius) * 1.2);
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.ct-feature-icon svg {
+    color: var(--accent-foreground);
+}
+
+.ct-feature-text h6 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+    margin-bottom: 2px;
+}
+
+.ct-feature-text p {
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Divider */
+.ct-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Contact channels */
+.ct-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ct-channel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.85rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.3);
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.ct-channel:hover {
+    background: var(--secondary);
+    border-color: #c5bca4;
+    /* transform: translateX(3px); */
+}
+
+.ct-channel-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius);
+    background: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent-foreground);
+}
+
+.ct-channel-info {
+    flex: 1;
+}
+
+.ct-channel-info .ch-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 1px;
+}
+
+.ct-channel-info .ch-value {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.ct-channel-arrow {
+    color: var(--muted-foreground);
+}
+
+/* ── Right: form card ── */
+.ct-form-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 2);
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 4px 24px rgba(42, 30, 0, 0.08), 0 1px 4px rgba(42, 30, 0, 0.04);
+    position: sticky;
+    top: 80px;
+}
+
+.ct-form-header {
+    background: var(--primary);
+    padding: 1.4rem 1.6rem 1.2rem;
+}
+
+.ct-form-header h5 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--primary-foreground);
+    margin-bottom: 3px;
+    letter-spacing: -0.01em;
+}
+
+.ct-form-header p {
+    font-size: 0.775rem;
+    color: rgba(251, 252, 254, 0.5);
+    font-weight: 300;
+    margin: 0;
+}
+
+.ct-form-body {
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+/* Field */
+.ct-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.32rem;
+}
+
+.ct-field label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--foreground);
+}
+
+.ct-field input,
+.ct-field select,
+.ct-field textarea {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--foreground);
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.58rem 0.875rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ct-field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%239d8b57' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    padding-right: 2.2rem;
+    cursor: pointer;
+}
+
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
+    color: var(--muted-foreground);
+    opacity: 0.65;
+}
+
+.ct-field input:hover:not(:focus),
+.ct-field select:hover:not(:focus),
+.ct-field textarea:hover:not(:focus) {
+    border-color: #c5bca4;
+    background: var(--muted);
+}
+
+.ct-field input:focus,
+.ct-field select:focus,
+.ct-field textarea:focus {
+    border-color: var(--accent-foreground);
+    box-shadow: 0 0 0 3px var(--ring);
+    background: #fff;
+}
+
+.ct-field textarea {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.6;
+}
+
+.ct-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Form footer */
+.ct-form-footer {
+    padding: 0 1.6rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ct-submit-btn {
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--primary-foreground);
+    border-radius: var(--radius);
+    padding: .38rem 3rem;
+    background-color: var(--primary);
+    transition: color .18s;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+
+.ct-submit-btn:hover {
+    color: var(--primary-foreground);
+    background-color: var(--primary);
+    box-shadow: 0px 0px 10px var(--primary);
+    transition: all .3s;
+}
+
+.ct-submit-btn:active {
+    /* transform: scale(0.99); */
+    box-shadow: none;
+}
+
+.ct-form-note {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* ─── Testimonial strip ─── */
+.ct-testimonial-strip {
+    background: var(--muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+}
+
+.ct-testimonial-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ct-testimonial-label {
+    text-align: center;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 1.75rem;
+}
+
+.ct-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.ct-tcard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.5);
+    padding: 1.2rem 1.3rem;
+}
+
+.ct-tcard-quote {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--foreground);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.ct-tcard-author {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.ct-tcard-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+}
+
+.ct-tcard-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.ct-tcard-role {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+}
+
+/* ─── Footer ─── */
+.ct-footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.ct-footer-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ct-footer p {
+    font-size: 0.78rem;
+    color: var(--muted-foreground);
+    line-height: 1.7;
+}
+
+.ct-footer a {
+    color: var(--accent-foreground);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ─── Success state ─── */
+.ct-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    gap: 1rem;
+}
+
+.ct-success-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #d6f0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a6b45;
+}
+
+.ct-success h5 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--foreground);
+}
+
+.ct-success p {
+    font-size: 0.845rem;
+    color: var(--muted-foreground);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 991px) {
+    .ct-main {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem 1.25rem 4rem;
+    }
+
+    .ct-form-card {
+        position: static;
+    }
+
+    .ct-testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .ct-hero {
+        padding: 3.5rem 1.25rem 3rem;
+    }
+
+    .ct-trust-inner {
+        gap: 1rem;
+    }
+
+    .ct-field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ct-main {
+        padding-top: 2rem ;
+        padding-bottom: 2rem ;
+    }
+
+    .ct-form-body {
+        padding: 1.2rem 1.2rem;
+    }
+
+    .ct-form-footer {
+        padding: 0 1.2rem 1.3rem;
+    }
+
+    .ct-form-header {
+        padding: 1.2rem 1.2rem 1rem;
+    }
+
+    .ct-testimonial-strip {
+        padding: 2.5rem 1rem;
+    }
+}
