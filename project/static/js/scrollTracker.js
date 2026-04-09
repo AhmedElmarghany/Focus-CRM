@@ -1,13 +1,13 @@
 (function () {
   // All nav links that point to a section
   const navLinks = document.querySelectorAll(
-    '.navbar-nav .nav-link[href^="#"]',
+    '.navbar-nav .nav-link[href^="/#"]',
   );
 
   // Build a map: sectionId → navLink
   const sectionMap = new Map();
   navLinks.forEach((link) => {
-    const id = link.getAttribute("href").replace("#", "");
+    const id = link.getAttribute("href").replace("/#", "");
     if (id) sectionMap.set(id, link);
   });
 
@@ -67,8 +67,7 @@
   });
 
   // ── Edge case: highlight "Home" when scrolled to the very top ───
-  // (since the home section is often the page top with id="" or no id)
-  const homeLink = document.querySelector('.navbar-nav .nav-link[href="#"]');
+  const homeLink = document.querySelector('.navbar-nav .nav-link[href="/#"]');
   if (homeLink) {
     window.addEventListener(
       "scroll",
