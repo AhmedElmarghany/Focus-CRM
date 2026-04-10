@@ -21,3 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('webapp.urls'))
 ]
+
+handler404 = 'webapp.views.custom_not_found_page'
