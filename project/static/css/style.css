@@ -113,3 +113,26 @@ html {
     background: var(--primary);
     border-radius: 99px;
 }
+.btn-primary {
+    font-weight: 500;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    color: var(--primary-foreground);
+    border-radius: var(--radius);
+    border: none;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    background-color: var(--primary);
+    cursor: pointer;
+    text-align: center;
+    transition:
+        background 0.3s,
+        box-shadow 0.3s;
+
+}
+
+.btn-primary:hover {
+    color: var(--primary-foreground);
+    background: #162f50;
+    box-shadow: 0px 0px 5px var(--primary);
+}

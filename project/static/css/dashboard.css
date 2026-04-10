@@ -29,18 +29,9 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 0.58rem 1.2rem;
-    background: var(--primary);
-    color: var(--primary-foreground);
-    border: none;
-    border-radius: var(--radius);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
     text-decoration: none;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
 }
 
 .db-add-btn:hover {

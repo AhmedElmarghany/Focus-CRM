@@ -468,34 +468,15 @@
 }
 
 .ct-submit-btn {
-    font-weight: 600;
-    font-size: 1rem;
-    white-space: nowrap;
-    color: var(--primary-foreground);
-    border-radius: var(--radius);
-    padding: .38rem 3rem;
-    background-color: var(--primary);
-    transition: color .18s;
+    padding: .6rem 3rem;
     width: 100%;
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.02em;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: background 0.15s, box-shadow 0.15s;
-}
-
-.ct-submit-btn:hover {
-    color: var(--primary-foreground);
-    background-color: var(--primary);
-    box-shadow: 0px 0px 10px var(--primary);
-    transition: all .3s;
 }
 
 .ct-submit-btn:active {
-    /* transform: scale(0.99); */
     box-shadow: none;
 }
 

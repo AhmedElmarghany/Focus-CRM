@@ -185,38 +185,23 @@
 
 .nf-btn-primary {
     display: inline-flex;
-    align-items: center;
     gap: 7px;
-    padding: .65rem 1.35rem;
-    background: var(--primary);
-    color: var(--primary-foreground);
-    border: none;
-    border-radius: var(--radius);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: .9rem;
-    font-weight: 500;
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
     text-decoration: none;
-    letter-spacing: .02em;
-    transition: background .15s, transform .1s, box-shadow .15s;
-}
-
-.nf-btn-primary:hover {
-    background: #162f50;
-    color: var(--primary-foreground);
-    box-shadow: 0 4px 16px rgba(12, 37, 63, .22);
 }
 
 .nf-btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: .65rem 1.35rem;
+    padding: 0.55rem 1.6rem;
     background: var(--secondary);
     color: var(--secondary-foreground);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: .9rem;
+    font-size: 0.875rem;
     font-weight: 500;
     text-decoration: none;
     transition: background .15s, border-color .15s, transform .1s;

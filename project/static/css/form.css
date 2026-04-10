@@ -327,26 +327,9 @@ input.is-valid-match {
 /* Submit */
 .btn-primary-custom {
     width: 100%;
-    padding: .38rem 1rem;
-    background: var(--primary);
-    color: var(--primary-foreground);
-    border: none;
-    border-radius: var(--radius);
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    letter-spacing: 0.03em;
-    transition:
-        background 0.15s,
-        transform 0.1s,
-        box-shadow 0.15s;
+    padding: .6rem 1rem;
 }
 
-.btn-primary-custom:hover {
-    background: #162f50;
-    box-shadow: 0 4px 18px rgba(12, 37, 63, 0.22);
-}
 
 .btn-primary-custom:active {
     transform: scale(0.99);
