@@ -377,7 +377,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 600px) {
+@media (max-width: var(--md)) {
     .rv-page {
         padding: 2rem 0.75rem 4rem;
     }
@@ -431,7 +431,7 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: var(--sm)) {
     .rv-profile-hero {
         padding: 1.5rem 1.1rem 0;
     }

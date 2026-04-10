@@ -94,18 +94,14 @@
 }
 
 /* RESPONSIVE OVERRIDES */
-@media (max-width: 575.98px) {
-    /* .faq { */
-    /* padding: 64px 0 72px; */
-    /* } */
-
+@media (max-width: var(--md)) {
     .faq__heading {
         font-size: 2rem;
     }
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: var(--xl)) {
 
     .faq__heading,
     .faq__label-wrap,

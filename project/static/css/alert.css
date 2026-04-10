@@ -251,7 +251,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 480px) {
+@media (max-width: var(--sm)) {
     .toast-stack {
         bottom: 1rem;
         right: 1rem;

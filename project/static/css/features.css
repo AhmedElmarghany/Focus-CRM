@@ -68,7 +68,7 @@
 }
 
 /* ─── Responsive: stack to 1 col on xs ───────────────────────── */
-@media (max-width: 575.98px) {
+@media (max-width: var(--md)) {
     .features {
         padding: 64px 0 72px;
     }
@@ -83,7 +83,7 @@
     }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: var(--md)) and (max-width: var(--lg)) {
     .features__title {
         font-size: 2.75rem;
     }

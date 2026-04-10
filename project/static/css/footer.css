@@ -101,13 +101,13 @@
 }
 
 /* RESPONSIVE OVERRIDES */
-@media (max-width: 575.98px) {
+@media (max-width: var(--md)) {
     .site-footer {
         padding: 48px 0 0;
     }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: var(--lg)) {
     .footer-tagline {
         max-width: 100%;
     }

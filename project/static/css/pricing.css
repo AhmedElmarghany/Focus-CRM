@@ -131,7 +131,7 @@
 
 
 /* RESPONSIVE OVERRIDES */
-@media (max-width: 575.98px) {
+@media (max-width: var(--md)) {
     .pricing-card__price {
         font-size: 2rem;
     }

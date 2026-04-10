@@ -87,6 +87,14 @@
 
   --sidebar-border: #e2d9bf;
   --sidebar-ring: #8eb7e6;
+  
+  /* media queries */
+  --xs: 380px;
+  --sm: 480px;
+  --md: 576px;
+  --lg: 768px;
+  --xl: 992px;
+  --xxl: 1200px;
 }
 
 
@@ -135,4 +143,49 @@ html {
     color: var(--primary-foreground);
     background: #162f50;
     box-shadow: 0px 0px 5px var(--primary);
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.delay-1 {
+    animation-delay: 0.07s;
+}
+
+.delay-2 {
+    animation-delay: 0.14s;
+}
+
+.delay-3 {
+    animation-delay: 0.21s;
+}
+
+.delay-4 {
+    animation-delay: 0.28s;
+}
+
+.delay-5 {
+    animation-delay: 0.35s;
+}
+
+.delay-6 {
+    animation-delay: 0.42s;
+}
+
+.delay-7 {
+    animation-delay: 0.49s;
 }
