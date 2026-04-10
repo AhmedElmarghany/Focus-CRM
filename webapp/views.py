@@ -185,4 +185,8 @@ def contact_us(request):
     return render(request, 'pages/contact-us.html', context=context)
 
 def custom_not_found_page(request, exception):
-    return render(request, 'pages/404.html', status=404)
+    context = {
+        'title': "404 Page Not Found"
+    }
+
+    return render(request, 'pages/404.html', status=404, context=context)
