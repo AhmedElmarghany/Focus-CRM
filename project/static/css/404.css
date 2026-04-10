@@ -239,7 +239,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: var(--sm)) {
+@media (max-width: 480px) {
     .nf-actions {
         flex-direction: column;
         width: 100%;

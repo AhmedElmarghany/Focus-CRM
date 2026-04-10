@@ -345,7 +345,7 @@ input.is-valid-match {
 }
 
 /* ── Responsive ── */
-@media (max-width: var(--lg)) {
+@media (max-width: 768px) {
     .panel-left {
         min-height: auto;
         padding: 2rem 1.75rem 2.5rem;
@@ -376,7 +376,7 @@ input.is-valid-match {
     }
 }
 
-@media (min-width: var(--lg)) and (max-width: var(--xl)) {
+@media (min-width: 768px) and (max-width: 992px) {
     .panel-left {
         padding: 2.5rem;
     }

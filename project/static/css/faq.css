@@ -94,14 +94,14 @@
 }
 
 /* RESPONSIVE OVERRIDES */
-@media (max-width: var(--md)) {
+@media (max-width: 576px) {
     .faq__heading {
         font-size: 2rem;
     }
 }
 
 
-@media (max-width: var(--xl)) {
+@media (max-width: 992px) {
 
     .faq__heading,
     .faq__label-wrap,

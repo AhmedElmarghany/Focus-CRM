@@ -87,14 +87,6 @@
 
   --sidebar-border: #e2d9bf;
   --sidebar-ring: #8eb7e6;
-  
-  /* media queries */
-  --xs: 380px;
-  --sm: 480px;
-  --md: 576px;
-  --lg: 768px;
-  --xl: 992px;
-  --xxl: 1200px;
 }
 
 

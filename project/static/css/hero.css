@@ -156,7 +156,7 @@
 /* ─── Responsive tweaks ──────────────────────────────────────── */
 
 /* Mobile (< 576 px): single‑column, full-width buttons */
-@media (max-width: var(--md)) {
+@media (max-width: 576px) {
     .hero {
         padding-top: 40px;
     }
@@ -224,7 +224,7 @@
 }
 
 /* xs screens */
-@media (max-width: var(--xs)) {
+@media (max-width: 380px) {
     .hero-badge__pill {
         padding: 4px 7px;
         font-size: .65rem;
@@ -242,7 +242,7 @@
 }
 
 /* Tablet (576 – 991 px): still centred, moderate scale */
-@media (min-width: var(--md)) and (max-width: var(--xl)) {
+@media (min-width: 576px) and (max-width: 992px) {
     .hero-title {
         font-size: clamp(2.5rem, 5vw, 3.5rem);
     }
@@ -254,7 +254,7 @@
 }
 
 /* Large desktop (≥ 1200 px) */
-@media (min-width: var(--xxl)) {
+@media (min-width: 1200px) {
     .hero {
         padding-top: 72px;
     }

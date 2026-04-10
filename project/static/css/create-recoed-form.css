@@ -208,7 +208,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: var(--md)) {
+@media (max-width: 576px) {
     .cr-section {
         padding: 1.25rem 1.1rem;
     }
