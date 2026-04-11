@@ -2,7 +2,11 @@
 
 A modern, responsive landing page for CRM system, built with Django and Bootstrap. Designed with a strong **UI/UX and frontend design**.
 
-The application provides an interface for managing *CRUD operations* for managing customer records, organized *search functionality*, and secure *access control*.
+The application provides an interface for managing **CRUD operations** for managing customer records, organized **search functionality**, and secure **access control**.
+
+---
+
+[Live Demo](https://ahmedelmarghany.pythonanywhere.com/)
 
 ---
 
@@ -194,24 +198,31 @@ The application will be available at: `http://127.0.0.1:8000/`
 
 <img width="1914" height="1111" alt="1" src="https://github.com/user-attachments/assets/af8df590-a49d-455d-8a58-b450ba326a1b" />
 
+---
 
 <img width="1914" height="1044" alt="2" src="https://github.com/user-attachments/assets/f2edd111-fe2d-44a4-9653-b88c83c727f9" />
 
+---
 
 <img width="1919" height="869" alt="3" src="https://github.com/user-attachments/assets/e2c2f362-e0a8-4283-a12a-29c4503f40e2" />
 
+---
 
 <img width="1914" height="867" alt="4" src="https://github.com/user-attachments/assets/68a3899a-3a8f-4313-a187-9098eb569155" />
 
+---
 
 <img width="1919" height="869" alt="5" src="https://github.com/user-attachments/assets/768b3cbc-3e78-4150-aaef-c0325904ee1b" />
 
+---
 
 <img width="1919" height="869" alt="6" src="https://github.com/user-attachments/assets/3f197bd6-d404-44a6-b02a-37ab3949c82d" />
 
+---
 
 <img width="1290" height="922" alt="7" src="https://github.com/user-attachments/assets/39e5cbeb-6ff5-4384-b7e9-2e9565d1a624" />
 
+---
 
 <img width="1919" height="869" alt="8" src="https://github.com/user-attachments/assets/dd275688-3490-430e-8cc8-6ef6bef02e30" />
 
